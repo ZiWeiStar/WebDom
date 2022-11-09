@@ -1,0 +1,341 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>document</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+    margin: 0px;
+    padding: 0;
+    padding-top: 41px;
+    background: url(./images/1.jpg) #1c0c0f center 0 no-repeat fixed;
+}
+.hide {
+    display: none;
+}
+
+.clear {
+    clear: both;
+    height: 40px
+}
+
+.top {
+    width: 100%;
+    top: 0px;
+    height: 41px;
+    background-color: #001E3B;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    z-index: 999;
+    margin-bottom: 200px;
+}
+
+
+.container {
+    width: 960px;
+    min-width: 960px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.scrubber {
+    position: absolute;
+    top: 29px;
+    left: 0px;
+    width: 47px;
+    z-index: 999
+}
+
+.scrubber a:hover,
+.scrubber a.cur {
+    border-right-color: #d6a2ea;
+    color: #d6a2ea;
+    font-weight: bold;
+}
+
+.scrubber a:hover {
+    text-decoration: underline;
+}
+.scrubber a {
+    height: 26px;
+    line-height: 26px;
+    padding-right: 5px;
+    font-size: 12px;
+    color: #a5a5a5;
+    text-decoration: none;
+    display: block;
+    border-right: 2px solid #c8c8c8;
+    border-right-color: rgba(200, 200, 200, .5);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+    text-align: right;
+}
+
+
+.scrubber a.cur:hover {
+    text-decoration: none;
+}
+
+.spine {
+    display: block;
+    width: 3px;
+    height: 100%;
+    background: #eee;
+}
+
+#scrubber .s_month {
+    display: none;
+}
+
+.content {
+    /* position: relative;  */
+    border-left: 2px solid rgb(17, 17, 88);
+    margin-left: 120px;
+    padding-top: 20px;
+    padding-left: 37px;
+}
+
+
+
+.citem {
+    width: 370px;
+    background: #fff;
+    height: auto;
+    margin: 20px 30px 0 0;
+    position: relative;
+    border-radius: 4px;
+    color: #888;
+}
+
+.citem_left {
+    float: left;
+}
+
+.citem_first {
+    margin-top: -20px;
+}
+
+.citem_right {
+    float: right;
+}
+
+.citem_right .dot {
+    left: -443px;
+}
+.c_year {
+    height: 30px;
+    line-height: 30px;
+    color: #a5a5a5;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+    font-weight: bold;
+    font-size: 14px;
+    position: relative;
+    left: -90px;
+    clear: both;
+}
+.arrow {
+    position: absolute;
+    height: 0px;
+    border-color: transparent #e2e2e2 transparent transparent;
+    border-width: 10px 10px 10px 0;
+    border-style: dashed solid dashed dashed;
+    border-right-color: #fff;
+    left: -10px;
+    top: 20px;
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 11px;
+    position: absolute;
+    left: -43px;
+    top: 25px;
+    background: #fff;
+}
+
+.dot_child {
+    width: 7px;
+    height: 7px;
+    border-radius: 7px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    background: #c69ad7;
+}
+
+.head {
+    padding: 15px 15px 0px 15px;
+}
+
+.head_title {
+    height: 46px;
+    line-height: 46px;
+    font-size: 28px;
+    padding: 0px 0px 10px 56px;
+    position: relative;
+}
+
+.head_intro {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 0 15px;
+}
+
+.head_title_icon {
+    width: 46px;
+    height: 46px;
+    background-color: #cba4e3;
+    border-radius: 8px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+    color: #fff;
+    font-size: 27px;
+    line-height: 23px;
+}
+
+.media {
+    padding-bottom: 10px;
+    height: 277px;
+    overflow: hidden;
+}
+
+.footer {
+    padding: 10px 15px;
+    margin: 0px 15px;
+    border-top: 1px solid #d6d6d6;
+    font-size: 12px;
+    color: #b2b2b2;
+}
+
+
+
+.footer_info .uiico {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    visibility: visible;
+}
+
+
+
+.footer a {
+    color: #b2b2b2;
+    text-decoration: none;
+    padding-right: 10px;
+    display: inline-block;
+    height: 20px;
+}
+
+.footer a:hover {
+    color: #9b3bd7;
+    text-decoration: underline;
+}
+
+.uiico, .uiicon {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    font-size: 0;
+    overflow: hidden;
+}
+
+
+
+.ico_zan {
+    background-image: url(./images/icon1.png);
+ 
+}
+
+.ico_com {
+    background-image: url(./images/icon2.jpg);
+
+}
+</style>
+</head>
+<body>
+
+
+<div class="hide">
+    <div id="tplsyear">
+        <a href="javascript:;" onclick="showYear({year},this)" class="s_year" id="sc{year}">{year}
+            {list}
+        </a>
+    </div>
+
+    <div id="tplsmonth" >
+        <a href="javascript:;" class="s_month {year}_month" onclick="showMonth({year},{month},this)" id="scrubber_month_{year}{month}" >{month}月</a>
+    </div>
+
+    <div id="tplcyear">
+
+        <div class="c_year" id="contentyear{year}">{year}</div>
+        {list}
+
+    </div>
+
+    <div id="tplcmonth">
+
+        <div class="citem ">
+
+            <div class="arrow"></div>
+            <div class="dot"><div class="dot_child"></div></div>
+
+            <div class="head">
+
+                <div class="head_title">
+                    <div class="head_title_icon">{lunar}</div>
+                    {date}
+                </div>
+                <div class="head_intro">
+                    <i class="uiico "></i>
+                    {intro}
+                    <i class="uiico "></i>
+                </div>
+            </div>
+            <div class="media">
+                {media}
+            </div>
+            <div class="footer">
+                <div class="footer_info">
+                    <a href="javascript:void(0)" class="op_zan" title="赞">
+                        <i class="uiico ico_zan">赞</i>({like})</a>
+                    <a href="javascript:void(0)" class="op_pin" title="评论">
+                        <i class="uiico ico_com">评论</i>({comment})</a>
+                </div>
+               
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="top"></div>
+
+
+<div class="container">
+
+    <div class="scrubber" id="scrubber"> 
+       
+    </div>
+
+    <div class="content" id="content"> 
+
+    </div>
+</div>
+<script type="text/javascript" src="js/data2.js"></script>
+<script type="text/javascript" src="js/GetLunarDay.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+</body>
+</html>
