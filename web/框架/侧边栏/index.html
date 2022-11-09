@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./图标/bootstrap.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* main{
+            width:1000px ;
+            margin: 0 auto;
+        }
+        main img{
+        width: 100%;
+        vertical-align: middle;
+        } */
+        nav{
+            position: fixed;
+            top: 0;
+            left: -60px;
+            width: 60px;
+            height:100% ;
+            background-color: orange;
+            color: white;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+            box-sizing: border-box;
+        }
+        nav dl{
+            /* display: none; */
+            cursor: pointer;
+        }
+        nav dl dd{
+            /* display: none; */
+            position: absolute;
+            width: 80px;
+            height: 100%;
+            top: 0;
+            left: -80px;
+            background-color: rgb(235, 145, 9);
+            transition:  all  0.7s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 30px;
+            padding-top:60px;
+            box-sizing: border-box;
+            opacity: 0;
+        }
+        nav dl dd.right{
+           
+            left: 60px;
+            opacity: 1;
+            
+        }
+        nav dl dd a{
+            color: white;
+        }
+        nav dl dd  div.back{
+            position: absolute;
+            left: 33px;
+            top: 30px;
+        }
+        nav dl dt{
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 30px;
+        }
+        nav aside{
+            position: fixed;
+            left: 30px;
+            bottom: 50px;
+
+        }
+        nav aside span{
+            font-size: 30px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+ <nav  id="nav">
+     <dl>
+         <dt >
+             <span class="glyphicon glyphicon-user"></span>
+             <span>我</span>
+         </dt>
+         <dd>
+             <a>电视机</a>
+             <a>飞机</a>
+             <a>大炮</a>
+             <a>轮船</a>
+             <a>航空飞轮船</a>
+             <a>大白菜</a>
+             <div class="back ">
+                <span class="glyphicon glyphicon-circle-arrow-left"></span>
+             </div>
+         </dd>
+     </dl>
+     <dl>
+        <dt>
+            <span class="glyphicon glyphicon-usd"></span>
+            <span>资产</span>
+        </dt>
+        <dd>
+            <a href="##">电视机</a>
+            <a href="##">飞机</a>
+            <a href="##">平板</a>
+            <a href="##">笔记本</a>
+            <a href="##">电脑</a>
+            <div class="back ">
+                <span class="glyphicon glyphicon-circle-arrow-left"></span>
+            </div>
+        </dd>
+    </dl>
+    <dl>
+        <dt >
+            <span class="glyphicon glyphicon-user"></span>
+            <span>我</span>
+        </dt>
+        <dd>
+            <a>电视机</a>
+            <a>飞机</a>
+            <a>大炮</a>
+            <a>轮船</a>
+            <a>航空飞轮船</a>
+            <a>大白菜</a>
+            <div class="back ">
+               <span class="glyphicon glyphicon-circle-arrow-left"></span>
+            </div>
+        </dd>
+    </dl>
+    <dl>
+        <dt>
+            <span class="glyphicon glyphicon-open"></span>
+            <span>看过</span>
+        </dt>
+        <dd>
+            <a href="##">电视机</a>
+            <a href="##">飞机</a>
+            <a href="##">平板</a>
+            <a href="##">笔记本</a>
+            <a href="##">电脑</a>
+            <div class="back ">
+                <span class="glyphicon glyphicon-circle-arrow-left"></span>
+            </div>
+        </dd>
+    </dl>
+    <dl>
+        <dt>
+            <span class="glyphicon glyphicon-heart"></span>
+            <span>品牌</span>
+        </dt>
+        <dd>
+            <a href="##">电视机</a>
+            <a href="##">飞机</a>
+            <a href="##">平板</a>
+            <a href="##">笔记本</a>
+            <a href="##">电脑</a>
+            <div class="back ">
+                <span class="glyphicon glyphicon-circle-arrow-left"></span>
+            </div>
+        </dd>
+    </dl>
+    <dl>
+        <dt>
+            <span class="glyphicon glyphicon-bell"></span>
+            <span>直播</span>
+        </dt>
+        <dd>
+            <a href="##">电视机</a>
+            <a href="##">飞机</a>
+            <a href="##">平板</a>
+            <a href="##">笔记本</a>
+            <a href="##">电脑</a>
+            <div class="back ">
+                <span class="glyphicon glyphicon-circle-arrow-left"></span>
+            </div>
+        </dd>
+    </dl>
+    <aside>
+        <span class="glyphicon glyphicon-hand-right toggle mycom"></span>
+    </aside>
+ </nav>   
+</body>
+<script src="../kjia.js"></script>
+<script src="../../选项卡/agent.js"></script>
+<!-- <script src="js/bootstrap.js"></script> -->
+<script>
+    let oNav=document.getElementById('nav');
+    // console.log(oNav.offsetHeight)
+    let oToggle=oNav.querySelector('aside span');
+
+    oToggle.onclick=function(){
+        if(this.classList.contains('glyphicon-hand-right')){
+        moveTo3(oNav,'left',0,5,function(){
+            oToggle.classList.remove('glyphicon-hand-right');
+            oToggle.classList.add('glyphicon-hand-left');
+        })
+    }else{
+        moveTo3(oNav,'left',-60,5,function(){
+            oToggle.classList.remove('glyphicon-hand-left');
+            oToggle.classList.add('glyphicon-hand-right');
+            clearCls('nav','dd','right')
+        });
+    }
+    }
+    agent1('nav','click','dl',function(){
+        let oDd=this.querySelector('dd');
+        clearCls('nav','dd','right');
+        oDd.className='right';
+        let oBack=oDd.querySelector('div.back');
+        // console.log(oBack.nodeName)
+        oBack.onclick=function(e){
+            e.stopPropagation();
+            oDd.className='';
+            oBack.onclick=null;
+        }
+    })
+</script>
+</html>

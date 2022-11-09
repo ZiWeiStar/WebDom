@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+   
+     .div1{
+        position:absolute;
+   
+        width: 200px;
+        height: 200px;
+ 
+}
+
+nav{ 
+    position:absolute;
+ 
+        width: 200px;
+        height: 200px;
+        background-color: rgb(77, 165, 191);
+      
+}
+ 
+body{
+     width: 600px;
+     height: 600px;
+     position:relative;
+ }
+</style>
+<body>
+    
+    <div id="box1">
+        <div class="div1" id="div1">
+            <nav></nav>
+        </div>
+    </div>
+  
+ 
+</body>
+<script src="drag.js"></script>
+
+<script>
+let oDiv1=document.getElementById('box1');
+// let oDiv2=document.getElementById('box2');
+oDiv1.onmouseover=function(){
+    drag2('div1','nav')
+   
+    }
+
+// oDiv2.onmouseover=function(){
+//         drag3('div1','aside')
+   
+//     }
+
+</script>
+</html>

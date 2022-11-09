@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 202px;
+            height: 312px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+        .box article{
+            position: absolute;
+        }
+        .box article:nth-child(1){
+            width: 31px;
+            height: 49px;
+            background: url('../../images/a.jpg') no-repeat;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+        }
+        .box article:nth-child(2){
+            width: 171px;
+            height: 47px;
+            background: url('../../images/b.jpg') no-repeat;
+            bottom: 0;
+            left: -140px;/*171-31*/
+            z-index: 7;
+        }
+        .box article:nth-child(3){
+            width: 198px;
+            height: 312px;
+            background: url('../../images/c.jpg') no-repeat;
+            bottom: -312px;
+            left: 0;
+            z-index: 5;
+        }
+        .box article:nth-child(3) span{
+            width: 20px;
+            height: 20px;
+            top: 0;
+            left: 0;
+            background: url('../../images/close.gif') no-repeat  ;
+            position: absolute
+           
+            
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <article></article>
+        <article></article>
+        <article>
+            <span></span>
+        </article>
+        
+    </div>
+    
+</body>
+<script src="../kjia.js"></script>
+<script>
+    let oDiv=document.getElementById('box');
+    let  aAticle=oDiv.querySelectorAll('article');
+    let   oSpan=aAticle[2].querySelector('span');
+    aAticle[0].onclick=function(){
+        moveTo3(aAticle[1],'left',27,10,function(){
+            moveTo3(aAticle[2],'bottom',47,10)
+        })
+    }
+    oSpan.onclick =function(){
+        moveTo3(aAticle[2],'bottom',-312,10,function(){
+            moveTo3(aAticle[1],'left',-140,10)
+        })
+    }
+</script>
+</html>

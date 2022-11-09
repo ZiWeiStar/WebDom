@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .box{
+        width:1200px ;
+        height: 600px;
+        margin: 50px auto;
+        position: relative;
+        perspective: 800px;
+        /* 模拟右上的效果 */
+        perspective-origin: 70% 30%;
+
+    }
+    section.box div.public {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        top: 0;
+        left: 0;
+        transform-style: preserve-3d;
+        transform-origin: right;
+        transition: transform 0.7s;
+        /* transform-origin: left;
+        transition: transfrom 1s ease-in-out; */
+    }
+    section.box div.public.right{
+        transform: rotateY(180deg);
+
+    }
+    section.box div.public div{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: inherit;
+        padding: 5px 10px 5px 5px;
+        box-sizing: border-box;
+        background-color: orange;
+        box-shadow: 0 0 30px #666 inset;
+        /*当翻转到背面不可见*/
+        backface-visibility: hidden;
+    }
+   
+    section.box div.public div img{
+        vertical-align: middle;
+        width: 100%;
+        height: 95%;
+    }
+    section.box div.public div p{
+        margin-top: 5px;
+    }
+    section.box div.public div.back{
+        transform: rotateY(180deg);
+        padding: 5px 5px 5px 10px;
+    }
+    /* .box section.left{
+        transform: rotateY(-);
+    }
+    .box section aside{
+        position: absolute;
+
+    } */
+</style>
+<body>
+    <section class="box" id="box">
+        <!-- <div class="public">
+            <div class="back">
+                <img src="./img/1.jpg" alt="" width="600px">
+                <p>1/5</p>
+            </div>
+            <div class="front">
+                <img src="./img/2.jpg" alt="" width="600px">
+                <p>2/5</p>
+            </div>
+        </div> -->
+    </section>
+</body>
+<script src="../选项卡/agent.js"></script>
+<script>
+    arr=[];
+    
+    arr[arr.length]={
+    src:"../images/1.jpg",
+    title:"美丽风光无限 :拍摄地:",
+    };
+    arr[arr.length]={
+    src:"../images/2.jpg",
+    title:"美丽风光无限 :拍摄地:",
+    };
+    arr[arr.length]={
+    src:"../images/3.jpg",
+    title:"美丽风光无限 :拍摄地:",
+    };
+    arr[arr.length]={
+    src:"../images/4.jpg",
+    title:"美丽风光无限 :拍摄地:",
+    };
+    arr[arr.length]={
+    src:"../images/5.jpg",
+    title:"美丽风光无限 :拍摄地:",
+    };
+    arr[arr.length]={
+    src:"../images/6.jpg",
+    title:"美丽风光无限 :拍摄地:",
+    };
+    arr[arr.length]={
+    src:"../images/7.jpg",
+    title:"美丽风光无限 :拍摄地:",
+    };
+    arr[arr.length]={
+    src:"../images/8.jpg",
+    title:"美丽风光无限 :拍摄地:",
+    };
+
+    let oBox=document.getElementById('box');
+    let str='';
+    let iLen=arr.length;
+    let zIndex=100;
+    for(let i=0;i<iLen;i=i+2){
+  
+        str+= `<div class="public ">
+                <div class="back">
+                    <img src="${arr[i].src}"/>
+                    <p>${arr[i].title}:&#45;&#45;${i+1}/${iLen}</p>
+                </div>
+                <div>
+                    <img src="${arr[i+1].src}"/>
+                    <p>${arr[i+1].title}:&#45;&#45;${i+2}/${iLen}</p>
+                </div>
+            </div>`;
+   }
+    oBox.innerHTML=str;
+    // let aDiv=oBox.querySelectorAll('div.public')
+    // console.log(aDiv)
+    // aDiv[2].onclick=function(){
+    //     console.log(998)
+    // }
+    agent3('box','click','public',function(){
+        // console.log(99)
+        this.classList.toggle('right');// 切换
+        this.style.zIndex=zIndex++;
+        
+    })
+</script>
+</html>

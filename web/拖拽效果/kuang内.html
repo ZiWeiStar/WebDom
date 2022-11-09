@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+   
+     .div1{
+        position:absolute;
+     
+        width: 200px;
+        height: 200px;
+ 
+}
+
+section{ 
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color:rgb(77, 165, 191);
+      
+}
+ 
+ nav{
+     border: 1px solid rgb(77, 52, 177);
+     margin: 100px auto;
+     width: 800px;
+     height: 500px;
+     position:relative;
+ }
+</style>
+<body>
+    <nav id="box">
+        <div class="div1" id="div1">
+            <section></section>
+        </div>
+    </nav>
+</body>
+<script src="drag.js"></script>
+<script>
+
+drag4('box','div1','section')
+
+</script>
+</html>

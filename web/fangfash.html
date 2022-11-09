@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/fang.css">
+</head>
+<body>
+ <div class="box" id="box"> 
+     <section class="left">
+         <a href="##">
+
+         </a>
+     </section>
+     <section class="right">
+        <a href="##">
+            
+        
+        </a>
+    </section>
+    <aside>
+        <img src="./images/img1.png" alt="">
+        <img src="./images/img2.png" alt="">
+        <img src="./images/img3.png" alt="">
+        <img src="./images/img4.jpg" alt="">
+        <img src="./images/img5.jpg" alt="">
+    </aside>
+    <ul>
+        <li class="active"><img src="./images/img1.png" alt=""></li>
+        
+        <li class="active"><img src="./images/img2.png" alt=""></li>
+        <li class="active"><img src="./images/img3.png" alt=""></li>
+        <li class="active"><img src="./images/img4.jpg" alt=""></li>
+        <li class="active"><img src="./images/img5.jpg" alt=""></li>
+        
+    </ul>
+ </div>   
+</body>
+<script src="./框架/kjia.js"></script>
+<script>
+    let oDiv=document.getElementById('box');
+    let oul=oDiv.querySelector('ul');
+    let aLi=oul.querySelectorAll('li');
+    let aLink=oDiv.querySelectorAll('a');
+    let aImg=oDiv.querySelectorAll('aside img');
+    let iLen=aImg.length;
+    let liwidth=100;
+    let x=0;//当前运动那张图片
+    let zIndex=20;
+    let timer=null;
+
+    aLink[0].onclick=function(){
+        if(x>iLen-1){
+            x=0;
+        }else{
+            x++;
+        }
+        move()
+      
+    }
+    aLink[1].onclick=function(){
+        if(x==0){
+            x=iLen-1;
+        }else{
+            x--;
+        }
+        move()
+       
+    }
+    function move(){
+       aImg[x].style.zIndex=zIndex++;
+       aImg[x].style.height=0;
+       moveTo3(aImg[x],'height',350,8)
+        if(x<=1){
+                moveTo3(oul,'left',0,5)
+                    
+                }else if(x>=iLen-2){
+                    moveTo3(oul,'left',-(iLen-4)*liwidth,10)
+                }else
+                {
+                    moveTo3(oul,'left',-(x-1)*liwidth,10)
+                }
+            }
+    
+    for(let i=0;i<iLen;i++){
+        
+            aLi[i].index=i;
+            aLi[i].onclick=function(){
+                if(x==this.index)return;
+
+                x=this.index;
+                clearclass();
+                this.className='active';
+                move()
+           
+        
+        
+    }}
+    
+    function clearclass(){
+        for(let i=0;i<iLen;i++){
+            if(aLi[i].className=='active'){
+                aLi[i].className='';
+                break;
+            }
+        }
+    }
+    function auto(){
+        timer=setInterval(function(){
+            aLink[0].onclick()
+        },2000)
+    }
+    auto()
+    oDiv.onmouseover=function(){
+    clearInterval(timer);
+    }
+    oDiv.onmouseout=function(){
+        auto()
+    }
+    oDiv.style.width=liwidth*4+8+"px";
+
+</script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+    padding: 0;
+    margin: 0;
+    }
+    div.box{
+        width: 929px;
+        margin: 0 auto;
+    }
+    div.box aside {
+        height: 373px;
+        background: url("../images/adv.png") no-repeat;
+    }
+
+    div.box div.b{
+        display: none;
+        height: 53px;
+        background: url("../images/current.png") no-repeat;
+        position: relative;
+    }
+     
+    div.box div.b span{
+        position: absolute;
+        top:0;
+        right: 2px;
+        width: 21px;
+        height: 53px;
+        background: url("../images/close.gif") no-repeat;
+        z-index: 20;
+    }
+    
+    div.box img{
+        vertical-align: middle;
+    }
+</style>
+<body>
+    <div class="box" id="box">
+        <aside  id="a">
+        </aside >
+        <div class="b" id="b">
+        <span  id="close"></span>
+        </div>
+        <img src="../images/cqwu.jpg" alt="">
+    </div>
+</body>
+<script src="../框架/kjia.js"></script>
+<script>
+    let oAside=document.getElementById('a');
+    let oB=document.getElementById('b');
+    let oSpan=document.getElementById('close');
+    
+    moveTo3(oAside,'height',373,10,function(){
+        setTimeout(function(){
+            moveTo3(oAside,'height',53,10,function(){
+                oAside.style.display='none';
+                oB.style.display='block';
+
+            })
+        },2000)
+    })
+    oSpan.onclick=function(){
+        oB.style.display='none';
+    }
+     
+    </script>
+</html>

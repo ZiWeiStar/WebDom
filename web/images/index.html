@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="box" id="box">
+        <aside class="left">
+            
+        </aside>
+        <aside class="right">
+            
+        </aside>
+        <a href="##" class="left"></a>
+        <a href="##" class="right"></a>
+        <article>
+            <img src="../幻灯片/img/1.jpg" alt="">
+            <img src="../幻灯片/img/2.jpg" alt="">
+            <img src="../幻灯片/img/3.jpg" alt="">
+            <img src="../幻灯片/img/4.jpg" alt="">
+            <img src="../幻灯片/img/5.jpg" alt="">
+        </article>
+        <ul>
+            <li class="active"><img src="../幻灯片/img/1.jpg" alt=""></li>
+            <li><img src="../幻灯片/img/2.jpg" alt=""></li>
+            <li><img src="../幻灯片/img/3.jpg" alt=""></li>
+            <li><img src="../幻灯片/img/4.jpg" alt=""></li>
+            <li><img src="../幻灯片/img/5.jpg" alt=""></li>
+        </ul>
+    </div>
+    
+
+</body>
+<script src="../frame/motion.js"></script>
+<script>
+    let oDiv=document.getElementById('box');
+    let oUl=oDiv.querySelector('ul');
+    let aLi=oUl.querySelectorAll('li');
+    let aLink=oDiv.querySelectorAll('a');
+    let aImg=oDiv.querySelectorAll('article img');
+    let iLen=aImg.length;
+    let liWidth=100;
+    let now=0;
+    let zIndex=20;
+    let timer=null;
+    
+    aLink[0].onclick=function (){
+        if(now>=iLen-1){
+            now=0;
+        }
+        else{
+           now++; 
+        }
+        
+        move();
+    }
+    aLink[1].onclick=function (){
+        if(now===0){
+            now=iLen-1;
+        }
+        else{
+           now--; 
+        }
+        move();
+
+    }
+    function move(){
+        aImg[now].style.zIndex=zIndex++;
+        aImg[now].style.height=0;
+        moveTo3(aImg[now],'height',300,10);
+        if(now<=1){
+                moveTo3(oUl,'left',0,10)
+            }
+            else if(now>=iLen-2){
+                moveTo3(oUl,'left',-(iLen-4)*liWidth,10)
+
+            }
+            else{
+                moveTo3(oUl,'left',-(now-1)*liWidth,10)
+            }
+    }
+    for(let i=0;i<iLen;i++){
+        aLi[i].index=i;
+        aLi[i].onclick=function (){
+            if(now===this.index) return;
+            now=this.index;
+            clearCls();
+            this.className='active';
+            move();
+
+        }
+    }
+    function clearCls(){
+        for(let i=0;i<iLen;i++){
+            if(aLi[i].className==='active'){
+                aLi[i].className==''
+                break
+            }
+        }
+    }
+    function auto(){
+        timer=setInterval(function(){
+            aLink[0].onclick()
+        },2000)
+    }
+    auto();
+    oDiv.onmouseover=function(){
+        clearInterval(timer);
+    }
+    oDiv.onmouseout=function(){
+        auto();
+    }
+
+    oDiv.style.width=liWidth*4+8+'px';
+
+
+
+</script>
+</html>

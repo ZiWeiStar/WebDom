@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin:0;
+    }
+    body{
+        background-color:#1F1E40 ;
+    }
+    table{
+        width: 500px;
+        border-collapse: collapse;
+        margin: 50px auto ;
+        text-align: center;
+        color: white;
+        line-height: 30px;
+        padding: 2px;
+    }
+    th{
+        color: red;
+    }
+    table td,table th{
+        border: 1px solid #FF8629;
+    }
+</style>
+<body>
+    <table>
+        <thead>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>题号</th>
+            <th>题目标题</th>
+        </thead>
+        <tbody id="new">
+        </tbody>
+        <template id="temp">
+            <tr>
+                <td>{{numb}}</td>
+                <td>{{name}}</td>
+                <td>{{tid}}</td>
+                <td>{{title}}</td>
+            </tr>
+        </template>
+    </table>
+</body>
+<script src="student.js"></script>
+<script>
+    let oTbody=document.getElementById('new');
+    let aTemp=document.getElementById('temp').innerHTML;
+    let str="";
+    let i=0;
+    arr.forEach(element => {
+        i=Math.floor(Math.random()*topic.length)
+      /*  str+="  <tr><td>"+element.no+"</td> <td>"+element.name+"</td> <td>"+topic[i].no+"</td><td>"+topic[i].name+"</td></tr>"*/
+    str+=aTemp.replace('{{numb}}',element.no).replace('{{name}}',element.name).
+    replace('{{tid}}',topic[i].no).replace('{{title}}',topic[i].topicname)
+    });
+    oTbody.innerHTML=str;
+</script>
+</html>

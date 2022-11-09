@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function()
+        {
+            var oTab=document.getElementById('tab1');
+            var oBtn=document.getElementById('btn');
+            var  oName=document.getElementById("name");
+            var oAge=document.getElementById('age');
+            var id=oTab.tBodies[0].rows.length+1;
+            console.log();
+            oBtn.onclick=function()
+            {
+               var oTr=document.createElement('tr') ;
+               
+               var oTd=document.createElement('td') ;
+               oTd.innerHTML=id++;
+            //    oTd.innerHTML=oTab.tBodies[0].rows.length+1;
+               oTr.appendChild(oTd);  
+               var oTd=document.createElement('td') ;
+               oTd.innerHTML=oName.value;
+               oTr.appendChild(oTd);  
+               var oTd=document.createElement('td') ;
+               oTd.innerHTML=oAge.value;
+               oTr.appendChild(oTd);  
+               var oTd=document.createElement('td') ;
+               oTd.innerHTML='<a href="javascript:;">删除</a>';
+               oTr.appendChild(oTd);  
+               oTd.getElementsByTagName('a')[0].onclick=function()
+               {
+                oTab.tBodies.removeChild(this.parentNode.parentNode);
+               };
+               oTab.tBodies[0].appendChild(oTr);
+            } 
+        }
+    </script>
+        
+    
+</head>
+<body>
+姓名：<input id="'name" type="='text"/>
+年龄：<input id="age" type="text"/>
+    <input id="'btn" type="button" value="添加"/>
+    <!-- <input id="'btn1" type="='button"value='搜索'/> -->
+    <table id="tab1" border="1" width="500">
+        <thead>
+            <td>ID</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>操纵</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td></td>
+                
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<!-- <script>
+    window.onload=function()
+    {   console.log(0);
+        var oTab=document.getElementById('tab1');
+        var oldColor=''
+        // oTab.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[1].getElementsByTagName('td')[1].innerHTML
+        for(var i=0;i<oTab.tBodies[0].rows.length;i++)
+        {
+            
+                oTab.tBodies[0].rows[i].onmouseover=function()
+                {
+                    oldColor=this.style.background;
+                    this.style.background='green';
+
+                };
+                oTab.tBodies[0].rows[i].onmouseout=function(){
+
+                    this.style.background='oldColor';
+                } 
+                if(i%2)
+                {
+                    oTab.tBodies[0].rows[i].style.background='';                        
+                
+                } else
+                    {
+                        oTab.tBodies[0].rows[i].style.background='#ccc';
+                    }
+               
+            }
+    }
+    </script> -->
+</html>

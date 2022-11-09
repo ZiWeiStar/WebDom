@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+*{
+    padding:0;
+    margin:0;
+}
+body{
+        background-color:#1F1E40 ;
+    }
+.cc{
+    position: absolute;
+    /* margin: 100px 200px; */
+    width: 30%;
+    height: 30%;
+    left: 50px;
+
+    }
+.c1{
+    /* margin: -100px -200px; */
+    width: 30%;
+    height: 30%;
+    right: 10px;
+    position: absolute;
+    }
+    .c2{
+    /* margin: -100px -200px; */
+    width: 30%;
+    height: 30%;
+    right: 10px;
+    top: 10px;
+    position: absolute;
+    }
+.bk1{
+        border: 2px solid #324D92;
+        margin: 100px auto 0;
+        width: 450px;
+        /* height: 140px; */
+        padding: 20px;
+        padding-top: none;
+    }
+.bk{
+        border: 2px solid #C14BA1;
+        margin: 0 auto 0;
+        width: 250px;
+        /* height: 140px; */
+        padding: 20px;
+        padding-top: none;
+    }
+div.box{
+        width: 200px;
+        margin: 0 auto 0;
+        position: relative;
+    }
+ h3{
+        text-align: center;
+        line-height: 100px;
+        color: #FFB10F;
+        border: 1px solid white;
+    
+ }
+ button{
+        margin:40px;
+        text-align: center;    
+        padding: 10px 15px;
+     
+ }
+</style>
+
+<body>
+    <img class="cc" src="../images/烟花.jpg">
+    <img    class="c1" src="../images/烟花1.jpg">
+    <!-- <img    class="c2" src="../images/烟花2.png"> -->
+    <div class="bk1">
+    <div class="bk">
+    <div class="box" id="box">
+        <h3>开始</h3>
+        <button id="btn1">抽奖</button>
+        <button id="btn2">停止</button>
+    </div>
+</div>
+</div>
+</body>
+<script>
+let data=["特等奖","安慰奖","安慰奖","安慰奖","安慰奖","三等奖","安慰奖","一等奖","安慰奖","二等奖","安慰奖","安慰奖"];
+let oDiv=document.getElementById('box');
+let aBtn=document.querySelectorAll('button');
+let oP=oDiv.querySelector('h3');
+let timer=null;
+aBtn[0].onclick=function(){
+    let i=0;
+    clearInterval(timer);
+    timer=setInterval(function(){
+        i=Math.floor(Math.random()*data.length)
+        oP.innerHTML=' <h3>'+data[i]+'</h3>';
+        aBtn[0].disabled=true;
+    },100)
+}
+aBtn[1].onclick=function(){
+    clearInterval(timer);
+    aBtn[0].disabled=false;
+}
+document.onkeyup=function(ev){
+    let e=ev||Event;
+    if(e.keyCode===13){
+        aBtn[0].onclick();
+    }else{
+        aBtn[1].onclick();
+    }
+}
+</script>
+</html>

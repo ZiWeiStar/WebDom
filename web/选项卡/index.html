@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #25C29B;
+        }
+        .box{
+            width: 800px;
+            height: 50px;
+            margin: 50px auto 0;
+            position: relative;
+            background-color: #999;
+            border-radius: 5px 5px 0 0;
+            display: flex;
+        }
+        .box dl dd{
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            line-height: 30px;
+            padding: 15px;
+            box-sizing: border-box;
+            background-color: white;
+            border: 1px solid red;
+        }
+        .box dl{
+            flex: 1;
+        }
+        .box dl dt{
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: white;
+            cursor: default;
+        }
+        .box dl.active dt{
+           border: 1px solid red;
+           border-radius: 5px 5px 0 0;;
+           position: relative;
+           background-color: white;
+        }
+        .box dl.active dt::after{
+          position: absolute;
+          content: '';
+          left: 0;
+          bottom:-1px ;
+          background-color: white;
+          height:3px;
+          width: 100%;
+          z-index: 10;
+        }
+        .box dl.active dd{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <dl class="active">
+        <dt>校内新闻</dt>
+        <dd>重庆市驻村第一书记及驻村工作队员示范培训班在我校成功举办
+            培训期间，市乡村振兴局党组书记、局长刘贵忠作了题为“深入贯彻习近平总书记关于‘三农’工作重要论述，牢牢守住不发生规模性返贫底线”的主题报告。报告指出紧扣坚决守住不发生规模返贫这一底线，要抓牢防止返贫监测和帮扶“两个环节”，抓住产业和就业“两个关键”，抓细深化实施乡村振兴重点帮扶行动和易地搬迁后续扶持行动“两个重点”，抓实新型农村集体经济和扶贫项目资产“两个基础”，抓好鲁渝协作、中央单位定点帮扶和社会力量帮扶“三类帮扶”。
+        </dd>
+    </dl>
+    <dl class="">
+        <dt>通知公告</dt>
+        <dd>关于2022年第一季度创业孵化基地入驻项目评审结果的公示
+            一、红河校区文理创谷南门时光创客咖啡厅立项项目
+
+序号
+
+项目名称
+
+申报单位
+
+团队类型
+
+1
+
+南门时光创客咖啡厅项目
+
+药学院
+
+学生企业
+
+
+
+二、红河校区文理创谷立项项目
+
+序号
+
+项目名称
+
+申报单位
+
+团队类型
+
+1
+
+短视频APP抖音账号运营
+
+文化与传媒学院
+
+学生企业
+
+2
+
+服饰文创
+
+美术与设计学院
+
+学生企业
+
+3
+
+头发与头皮亚健康的辩证施治三联保健疗法
+
+体育学院
+
+学生企业
+
+4
+
+非结构化人工智能数据处理平台
+
+外国语学院
+
+学生企业
+
+5
+
+香工坊--传统药香体验馆
+
+文化遗产学院
+
+学生企业
+
+6
+
+乐玩城--一个专业的二手玩具
+
+回收平台
+
+数学与大数据学院
+
+学生企业
+
+7
+
+纳斯健康科技有限公司
+
+体育学院
+
+学生企业
+
+ 
+
+三、星湖校区创业孵化基地立项项目
+
+序号
+
+项目名称
+
+申报单位
+
+团队类型
+
+1
+
+兴华视频摄制服务
+
+旅游学院
+
+学生企业
+
+2
+
+星湖书吧
+
+旅游学院
+
+学生企业
+
+3
+
+“绿野茶踪”花艺茶艺生活体验店
+
+园林与生命科学学院
+
+学生企业
+
+4
+
+一半花店
+
+园林与生命科学学院
+
+学生企业
+
+5
+
+千与千橙水果创意文化
+
+旅游学院
+
+学生企业
+
+6
+
+植物美学
+
+园林与生命科学学院
+
+学生企业
+
+7
+
+重庆帆顺传媒有限公司
+
+旅游学院
+
+学生企业
+
+ 
+        </dd>
+    </dl>
+    <dl class="">
+        <dt>学术活动</dt>
+        <dd>虹吸效应、木桶短板与发展制约——2022春节档电影市场透视创作走向
+            主 讲 人：周星
+
+主办单位：文化与传媒学院
+
+讲座时间：2022年4月9日（周六）晚上19:00——20:30
+
+讲座地点：B站直播间ID：22232441；快手直播间ID：2296830690
+
+内容简介：
+
+1.何为虹吸效应、木桶短板理论 
+
+2.2022年春节档电影市场介绍
+
+3.春节档电影市场创作走向
+        </dd>
+    </dl>
+    <dl class="">
+        <dt>热点推荐</dt>
+        <dd>【新闻快报】重庆文理学院申硕建大签约活动在招商签约中心举行
+            近年来，学校全面落实立德树人根本任务，主动对接成渝地区双城经济圈、乡村振兴等国家战略，围绕“建设应用型学科，开展应用型研究，培养应用型人才，创建高水平应用型大学”办学定位，深入实施一流应用型本科教育“5+1”建设行动计划，以“四新”建设为统领，全力打造大数据与智能制造类、材料类、医药与环保类、现代服务业与文化创意类和现代农业与乡村振兴类等新兴学科专业集群。目前，我校共有国家“双万计划”国家一流本科专业建设点4个、省级一流本科专业建设点19个，国家特色专业建设点1个，市级特色学科专业群2个，重庆市特色专业10个，重庆市大数据智能化类特色专业1个。3个师范类专业通过教育部师范类专业认证，1个专业通过住房和城乡建设部工程管理专业认证，3个专业高质量完成教育部师范类专业认证专家进校考查。
+        </dd>
+    </dl>
+    <dl class="">
+        <dt>媒体视点</dt>
+        <dd>中国教育在线：重庆市商务英语研究会第六届年会暨学术研讨会在重庆文理学院举行
+            开幕式上，学校副校长金盛代表学校致欢迎辞。他简要介绍了学校的办学历史以及近年来在转型发展中取得的成绩，感谢参会的专家和领导长期以来对学校各项事业发展，尤其是对商务英语专业的建设与发展提供的指导和帮助。重庆市商务英语研究会会长段玲琍代表研究会致开幕辞。她回顾了商务英语研究会的发展历程，对学会下一步工作的开展提出了殷切的希望。
+        </dd>
+    </dl>
+</div>  
+</body>
+<script src="agent.js"></script>
+<script>
+    agent1('box','click','dl',function(){
+        clearCls('box','dl','active');
+        this.className='active';
+    })
+</script>
+</html>

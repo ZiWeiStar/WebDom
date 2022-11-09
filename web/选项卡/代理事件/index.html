@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color:#1F1E40 ;
+    }
+    #box{
+    /* border: 2px solid #FFAB11; */
+    height: 550px;
+    width: 500px;
+    margin: 20px auto;
+    }
+    section,span,article{
+        display: block;
+        margin: 20px auto;
+        width: 500px;
+        height:40px;
+        background-color: #FF8629;
+        font-size: 20px;
+        text-align: center;
+        color: white;
+        line-height: 50px;
+    }
+</style>
+<body>
+    <h3>划过变色</h3>
+    <div id="box">
+    <span>1</span> 
+   <span class="b">2</span> 
+   <span>3</span>
+   <section class="b">4</section> 
+   <section>5</section> 
+   <section class="b">6</section> 
+   <article>7</article>
+   <article class="b">8</article>
+   <article>9</articlee>
+    </div>
+  
+ 
+</body>
+<script src="../agent.js"></script>
+<script>
+     agent2('box','mouseover','b',function(){
+        this.style.backgroundColor='#ED0261';
+ })
+</script>
+
+</html>

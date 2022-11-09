@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body {
+  background-color: #363688;
+}
+div.box {
+  height: 450px;
+  margin: 50px auto 0;
+  position: relative;
+  overflow: hidden;
+}
+div.box section {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 350px;
+}
+div.box section a {
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  top: 145px;
+  background-size: 60px 60px;
+  opacity: 0;
+  transition: all 3s;
+  z-index: 1000;
+  background: url('') no-repeat center top;
+}
+div.box section.left {
+  left: 0;
+  background-color: blanchedalmond;
+}
+div.box section.left:hover a {
+  opacity: 1;
+}
+div.box section.left a {
+  left: 40px;
+  background: url('../images/zuo.png') no-repeat center 0;
+  background-size: 70% 70%;
+}
+div.box section.right {
+  right: 0;
+  background-color: red;
+}
+div.box section.right:hover a {
+  opacity: 1;
+}
+div.box section.right a {
+  right: 40px;
+  background: url('../images/you.png') no-repeat center top 0;
+  background-size: 70% 70%;
+}
+div.box aside {
+  height: 350px;
+  background: url('') no-repeat center center;
+  background-size: 100% 350px;
+  z-index: 500;
+}
+div.box aside img {
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  vertical-align: middle;
+  left: 0;
+  top: 0;
+}
+div.box ul {
+  position: absolute;
+  height: 110px;
+  box-sizing: border-box;
+  left: 0;
+  top: 350px;
+  padding: 8px 8px 8px 0;
+  background-color: #999;
+  display: flex;
+}
+div.box ul li {
+  padding-left: 8px ;
+  width: 100px;
+  box-sizing: border-box;
+  height: 100%;
+  opacity: 0.5;
+  transition: all 3s;
+}
+div.box ul li.active,
+div.box ul li:hover {
+  opacity: 1;
+}
+div.box ul li img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}

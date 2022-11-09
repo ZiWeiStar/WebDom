@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.box {
+  width: 600px;
+  height: 360px;
+  margin: 50px auto 0;
+  position: relative;
+}
+.box a {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-size: 60px 60px;
+  transition: all 1s;
+  opacity: 0;
+  z-index: 1000;
+}
+.box a.left {
+  left: 0px;
+  background: url('img/jtl.png') no-repeat center left;
+  background-size: 20% 40%;
+}
+.box a.left:hover {
+  opacity: 1;
+}
+.box a.right {
+  right: -340px;
+  background: url('img/jtr.png') no-repeat 100px center;
+  background-size: 20% 40%;
+}
+.box a.right:hover {
+  opacity: 1;
+}
+.box aside {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 300px;
+  z-index: 999;
+}
+.box aside.left {
+  left: 0;
+}
+.box aside.left:hover ~ a.left {
+  opacity: 1;
+}
+.box aside.right {
+  right: 0;
+}
+.box aside.right:hover ~ a.right {
+  opacity: 1;
+}
+.box article {
+  width: 600px;
+  height: 300px;
+  background: url('../幻灯片/img/1.jpg') no-repeat center center;
+  background-size: 600px 300px;
+}
+.box article img {
+  position: absolute;
+  width: 600px;
+  height: 0;
+  vertical-align: middle;
+  left: 0;
+  top: 0;
+}
+.box ul {
+  position: absolute;
+  left: 0;
+  top: 300px;
+  box-sizing: border-box;
+  padding: 9px 8px 8px 0;
+  background-color: #fd8f8f;
+  display: flex;
+}
+.box ul li {
+  padding-left: 8px;
+  height: 100%;
+  width: 119px;
+  box-sizing: border-box;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+.box ul li.active {
+  opacity: 1;
+}
+.box ul li:hover {
+  opacity: 1;
+}
+.box ul li img {
+  width: 100px;
+  height: 60px;
+  vertical-align: middle;
+}

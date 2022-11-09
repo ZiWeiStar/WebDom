@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<!-- 2022/4/7上午 -->
+<script src="">
+let oDiv=document.getElementById('box');
+let oSection=oDiv.querySelector('section');
+let aLink=oDiv.querySelectorAll('aside a');
+let iLen=aLink.length;
+let x=0;
+let timer=0;
+for(let i=0;i<iLen;i++){
+    aLink[i].index=i;
+    aLink[i].onclick=function(){
+        x=this.index;
+        move();
+         
+    }
+}
+function move(){
+            clearclass();
+            aLink[x].className='active' 
+            moveTo3(oSection,'top',-x*400,10);
+        
+}
+function auto(){
+    let timer=setInterval(function(){
+    if(x==iLen-1){
+        x=0;
+    }else{
+        x++;    
+    }
+    
+    move();
+},2000)}
+auto();
+
+oDiv.onmouseover=function(){
+clearInterval(timer);
+}
+oDiv.onmouseout=function(){
+    auto();
+}
+function clearclass(){
+    for(let i=0; i<iLen;i++){
+        if(aLink[i].className=='active'){
+            aLink[i].className='';
+            break;
+        }
+    }
+}
+</script>
+</html>

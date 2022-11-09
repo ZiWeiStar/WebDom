@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../框架/侧边栏/图标/bootstrap.css">
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* background-color: #58C4E9;   */
+}
+nav{
+    width: 1100px;
+    border: 1px solid white;
+    background-color: #58C4E9;  
+    margin: 200px auto 0;
+}
+div.box{
+        width: 1000px;
+        margin: 20px auto 0;
+
+}    
+div.box div.head{
+display: flex;
+justify-content: space-around;
+    }   
+ div.box table{
+        width: 100%;
+        border-collapse: collapse;
+        line-height: 35px;
+        text-align: center;
+        
+}   
+div.box table thead{
+        border-top: 1px solid #555;
+        text-align: center;
+}    
+div.box table caption{
+        font-size: 20px;
+        /* left: 20px; */
+        letter-spacing: 8px;
+        margin-bottom: 20px;
+        margin-left: 450px;  
+        color: white
+        
+}    
+div.box table thead th,div.box table td{
+        margin-top: 10px;
+        border: 1px solid #555;
+        text-align: center;
+}    
+div.box table tbody td span{
+       padding: 5px 5px ;
+       margin: 0 10px ;
+       cursor: default;
+       color: white;
+}    
+div.box table tbody td span.edit{
+       background-color: #FED801;
+}    
+div.box table tbody td span.del{
+       background-color: #F74D33;
+}    
+</style>
+<body>
+    <nav>
+    <div class="box" id="box">
+        <div class="head">
+            <label >商品名称：
+                <input type="text" >
+            </label>
+            <label >商品数量：
+                <input type="text" >
+            </label>
+            <label >商品单价：
+                <input type="text" >
+            </label>
+            <button class="add">添加</button>
+        </div>
+        <table class="table">
+            <caption>购物车</caption>
+            <thead>
+                <th>商品名称</th>
+                <th>数量（个）</th>
+                
+                <th>价格（元）</th>
+                <th>小计（元）</th>
+                <th>操作</th>
+            </thead>
+            <tbody class="tbody" id="tbody">
+<tr><td>百度网盘会员</td><td>5</td><td>20</td><td>100</td><td><span class="edit">编辑</span><span class="del">删除</span></td></tr>
+            </tbody>
+        </table>
+    </div>
+</nav>
+</body>
+<script src="../选项卡/agent.js"></script>
+<script>
+    let oData=document.getElementById('box');
+    let aInput=oData.querySelectorAll('div>label>input');
+    let oBtn=oData.querySelector('div>button')
+    let oTbody=oData.querySelector('tbody')
+    
+    oBtn.onclick=function(){
+        let aReg=[/^\S{2,20}$/,/^[1-9]+/,/^\d{1,4}(\.\d{1,2})?$/];
+        let txtVal0=aInput[0].value.trim();
+        let txtVal1=aInput[1].value.trim();
+        let txtVal2=aInput[2].value.trim();
+
+        if(aReg[0].test(txtVal0) &&aReg[1].test(txtVal1) &&aReg[2].test(txtVal2)){
+            let tr=document.createElement('tr');
+            tr.appendChild(createTd(txtVal0))
+            tr.appendChild(createTd(txtVal1))
+            tr.appendChild(createTd(txtVal2))
+            tr.appendChild(createTd(txtVal1*txtVal2))
+            tr.appendChild(createTd('<span class="edit">编辑</span><span class="del">删除</span>'))
+            oTbody.appendChild(tr)
+            
+        }else{
+            alert('输入的数据有误！')
+        }
+    };
+    function createTd(txt){
+        let td=document.createElement('td');
+        td.innerHTML=txt;
+        return td
+    }
+    agent1('box','click','span',function(){
+        let tr=this.parentNode.parentNode;
+        if(this.className==='del'){
+            if(confirm('确认删除吗？')){
+               oTbody.removeChild(tr) 
+            }
+            
+        }else{
+            this.innerText='确定';
+            let td0=tr.children[0]
+            let td1=tr.children[1]
+            let td2=tr.children[2]
+            let td3=tr.children[3]
+            td0.innerHTML=`<input value="${td0.innerText}">`;
+            td1.innerHTML=`<input value="${td1.innerText}">`;
+            td2.innerHTML=`<input value="${td2.innerText}">`;
+            td3.innerText=``
+            this.onclick=function(e){
+                e.stopPropagation();
+                let inputVal0=td0.children[0].value.trim()
+                let inputVal1=td1.children[0].value.trim()
+                let inputVal2=td2.children[0].value.trim()
+                let aReg=[/^\S{2,20}$/,/^[1-9]+/,/^\d{1,4}(\.\d{1,2})?$/];
+
+                if(aReg[0].test(inputVal0) &&aReg[1].test(inputVal1) &&aReg[2].test(inputVal2)){
+                td0.innerHTML=inputVal0;
+                td1.innerHTML=inputVal1;
+                td2.innerHTML=inputVal2;
+                td3.innerHTML=inputVal1*inputVal2;
+                this.innerText='编辑'
+                this.onclick=null;
+                }else{
+                    alert("修改的数据有误！")
+                }
+               
+            }
+            
+        }
+    })
+
+</script>
+</html>

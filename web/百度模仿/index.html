@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width:700px ;
+            /* height:80px auto 0 ; */
+            margin: 100px auto 0;
+
+        }
+        .box div{
+            display: flex;
+        }
+        .box div input{
+            flex: 1;
+            line-height: 40px; ;
+            border: 1px solid black;
+            outline: none;
+            font-size: 18px;
+        }
+        .box div button{
+            width: 70px;
+            outline: none;
+            border: 1px solid rgb(27, 159, 212);
+            background-color: rgb(27, 159, 212);
+            color: white;
+            height: 42px;
+            font-size: 20px;
+        }
+        .box  ul{
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            line-height: 35px;
+            color: #999;
+           border-top: none;
+           font-size: 18px;
+           list-style: none;
+        }
+        .box ul  li.active{
+            background-color: #555;
+            color: rgb(19, 4, 4);
+        }
+        .box ul  li{
+            color: #999;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+ <div class="box" id="box">
+     <div>
+     <input class="searchTxt">
+     <button class="searchBtn">搜索</button>
+ </div>  
+ <ul class="infoList">
+     <!-- <li data-id="021"></li>
+     <li data-id="021"></li>
+     <li data-id="021"></li>
+     <li data-id="021"></li>
+     <li></li> -->
+ </ul> 
+</div>
+</body>
+<script src="../选项卡/agent.js"></script>
+<script>
+    var arr=localStorage.getItem('infoArr').split('');
+    // var arr=[];
+    // arr[arr.length]="重庆市商务英语研究会第六届年会暨学术研讨会在重庆文理学院举行";
+    // arr[arr.length]="华龙网—新重庆客户端：2021双创活动周丨智慧医疗带来商机 创新创业奋进正当时";
+    // arr[arr.length]="台艺人在沪1天只吃1餐?国台办回应";
+    // arr[arr.length]="160秒混剪中国航天大事记";
+    // arr[arr.length]="俄乌顿巴斯决战在即?胡锡进解读";
+    // arr[arr.length]="别被网红印花口罩的颜值骗了";
+    // arr[arr.length]="拜登口误越来越离谱了";
+
+    let oBox=document.getElementById("box");
+    let oInput=oBox.querySelector('input');
+    let oUl=oBox.querySelector('ul');
+    let oBtn=oBox.querySelector('button')
+    let aLi=[];
+    let i=-1;
+    let isnow=true;
+
+
+    oInput.onkeyup=function(e){
+        let keyCode=e.keyCode;
+        let val=this.value.trim();
+        if(keyCode===13){
+            oInput.value=aLi[i].innerText;
+            oUl.style.display='none';
+            isnow=false;
+        }else if(keyCode===38 || keyCode===40){
+            
+            if(keyCode===40){
+                //i=i>aLi.length-1?0:1;
+                if(i===aLi.length-1)i=-1;
+                clearCls();
+                i++;
+                aLi[i].className='active';   
+            }
+            else{
+                if(i===0)i=aLi.length;
+                clearCls();
+                i--;
+                aLi[i].className='active';
+                
+            }
+        }else{
+            // let liArr=[];
+            if(val===""){
+                oUl.style.display='none'
+                return;
+            }
+            let str='',i=0;
+            arr.forEach(el=>{
+                if(el.search(val)>=0){
+                    str+=`<li data-id='${i}'>${el}</li>`
+                
+                i++;
+                }
+            });
+            if(str.length>0){
+                oUl.innerHTML=str;
+                aLi=oUl.querySelectorAll('li');
+                oUl.style.display='block'
+            }else{
+                oUl.style.display='none'
+            }
+        }
+    }
+    function clearCls(){
+        for(let i=0;i<aLi.length;i++){
+            if(aLi[i].className==="active"){
+                aLi[i].className='';
+                break
+            }
+        }
+    }
+    document.onclik=function(){
+        oUl.style.display='none'
+    }
+    oBtn.onclik=function(){
+        // let str=localStorage.getItem('aaa');
+        // console.log(str.split(','));
+        let val=oInput.value.trim();
+        // console.log(localStorage.getItem('inforArr',arr));
+        if(isnow){
+            arr.push(val);
+            localStorage.setItem('inforArr',arr)
+        }
+        window.open('http://www.baidu.com/s?wd='+val,'_blank')
+    }
+</script>
+</html>

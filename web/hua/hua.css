@@ -1,0 +1,11 @@
+#hua{
+   
+    height: 0;
+}
+#hua section{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background: url('hua1.gif') no-repeat center center;
+    background-size: 100% 100%;
+}

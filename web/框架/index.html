@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.box{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            left: 30px;
+            /* top: 60px; */
+            opacity: 1;
+            border: 1px solid rgb(26, 184, 123);
+            font-size: 12px;
+        }
+        #box1{
+            top:20px
+            
+        }
+        #box2{
+            top:150px
+            
+        }
+        #box3{
+            top:260px
+        }
+        #box4{
+            top:370px
+        }
+        #box5{
+            top:550px
+        }
+        #box6{
+            top:680px
+        }
+        h3{
+            margin: 0 800px;
+        }
+    </style>
+</head>
+<body>
+    <h3>鼠标悬停</h3>
+    <div class="box" id="box3">闪耀的心</div>
+    <div class="box" id="box2">闪耀的心</div>
+    <div class="box" id="box1">闪耀的心</div>
+    <div class="box" id="box4">闪耀的心</div>
+    <div class="box" id="box5">闪耀的心</div>
+    <div class="box" id="box6">闪耀的心</div>
+    
+</body>
+<script src="kjia.js"></script>
+<script>
+    let oDiv1=document.getElementById('box1');
+    let oDiv2=document.getElementById('box2')
+    let oDiv3=document.getElementById('box3')
+    let oDiv4=document.getElementById('box4')
+    let oDiv5=document.getElementById('box5')
+    let oDiv6=document.getElementById('box6')
+    oDiv1.onmouseover=function(){
+    moveTo2(this,.1)
+   
+    }
+    oDiv2.onmouseover=function(){
+        moveTo3(this,'width',50,3,function(){
+            moveTo1(oDiv2,'borderWidth',20,3)
+    });
+    }
+    oDiv3.onmouseover=function(){
+   moveTo3(oDiv3,'left',600,3,function(){
+       moveTo2(oDiv3,.1);
+   })
+    }
+    oDiv4.onmouseover=function(){
+        moveTo1(oDiv4,'fontSize',50,1)
+        //moveTo1(oDiv,'top',500,3)
+    }
+    oDiv5.onmouseover=function(){
+        moveTo5(oDiv5,{'width':500,'height':50},10,function(){
+               moveTo5(oDiv5,{width:200,height:200},10)
+           });
+          
+        //moveTo1(oDiv,'top',500,3)
+    }
+    oDiv6.onmouseover=function(){
+        //    moveTo1(oDiv1,'left',500,3)
+        moveTo4(oDiv6,100,10,function(){
+               moveTo4(oDiv6,10,10)
+           })
+    }
+   
+</script>
+</html>

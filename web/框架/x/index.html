@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        background-color:#1F1E40 ;
+    }
+    .bk1{
+        border: 2px solid #324D92;
+        margin: 100px auto 0;
+        width: 850px;
+        /* height: 140px; */
+        padding: 20px;
+        padding-top: none;
+    }
+    .bk{
+        border: 2px solid #C14BA1;
+        margin: 0 auto 0;
+        width: 750px;
+        /* height: 140px; */
+        padding: 20px;
+        padding-top: none;
+    }
+    form{
+        width: 700px;
+        margin: 0 auto 0;
+        /* background-color:#FFB10F ; */
+        border: 2px solid #FF8629;
+        height: 100px;
+        padding: 15px;
+        
+    }
+    .div{
+        height: 50px;
+        line-height: 50px;
+        display: flex;
+         margin: 0 20px ;
+         padding: 5px;
+    }
+    article{
+        color: white  
+    }
+    label{
+        flex: 1;
+        color: white
+    }
+
+</style>
+<body>
+    <div class="bk1">
+    <div class="bk">
+<form action="">
+<fieldset>
+    <article>请选择你喜欢的演员与对应的作品</article>
+<div class="div" id="div">
+    
+</div>
+</div>
+</div>
+   
+</fieldset>
+</form>  
+</body>
+<script src="../../选项卡/agent.js"></script>
+<script>
+let aStar=[{name:'杨幂',works:[{no:'01',name:'三生三世十里桃花'},{no:'02',name:'宫锁心玉'},{no:'03',name:'小时代'},{no:'04',name:'仙剑奇侠传三'},{no:'05',name:'亲爱的翻译官'},{no:'06',name:'我是证人'},{no:'07',name:'古剑奇谭'},{no:'08',name:'王昭君'}]
+},
+{name:'赵丽颖',works:[{no:'9',name:'陆贞传奇'},{no:'10',name:'杉杉来了'},{no:'11',name:'知否知否应是绿肥红瘦'},{no:'12',name:'花千骨'},{no:'13',name:'楚乔传'},{no:'14',name:'乘风破浪'},{no:'15',name:'新还珠格格'},{no:'16',name:'老九门'},{no:'17',name:'青云志'}]
+}
+,{name:'刘亦菲',works:[{no:'18',name:'花木兰'},{no:'19',name:'二代妖精之今生有幸'},{no:'20',name:'功夫之王'},{no:'21',name:'铜雀台'},{no:'22',name:'神雕侠侣'},{no:'23',name:'仙剑奇侠传'},{no:'24',name:'倩女幽魂'},{no:'25',name:'烽火芳菲'},{no:'26',name:'夜孔雀'}]
+}];
+let aStr='';
+let oDiv=document.getElementById('div');
+aStar.forEach((el,i) => {
+    aStr+=`
+            <label for="">${el.name}
+            <select data-index="${i}">
+                <option value="-1">请选择 </option>
+                <option value="${el.works[0].no}">${el.works[0].name}</option>
+                <option value="${el.works[1].no}">${el.works[1].name}</option>
+                <option value="${el.works[2].no}">${el.works[2].name}</option>
+                <option value="${el.works[3].no}">${el.works[3].name}</option>
+                <option value="${el.works[4].no}">${el.works[4].name}</option>
+                <option value="${el.works[5].no}">${el.works[5].name}</option>
+                <option value="${el.works[6].no}">${el.works[6].name}</option>
+                <option value="${el.works[7].no}">${el.works[7].name}</option>
+                
+                 
+            </select>
+        </label> `
+        });
+        oDiv.innerHTML=aStr;
+        agent1('div','change','select',function(){
+            if(this.value==-1){
+                alert("请选择正确的作品"); 
+            }else{
+                alert(this.value);
+            }
+           
+        })
+</script>
+</html>

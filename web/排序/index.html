@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  body{
+        background-color:#1F1E40 ;
+    }
+  table tr,table td,table th{
+        border: 1px solid white;
+        border-collapse: collapse;
+        width: 50px;
+        padding: 10px;
+        text-align: center;
+  }
+    table{
+        margin: 100px auto 0;
+        border-collapse: collapse;
+        color: wheat;
+    }
+    caption{
+        font-size: 22px;
+    }
+    th:first-child{
+    color: red;
+    }
+</style>
+<body>
+    <table  >
+        <caption>考试成绩排名</caption>
+        <thead>
+                <th>学号</th>
+                <th>名字</th>
+                <th>语文</th>
+                <th>数学</th>
+                <th>英语</th>
+                <th>总分</th>
+                <th>名次</th>
+        </thead>
+        <tbody id="tbody"> 
+           
+        </tbody>
+    </table>
+</body>
+<script>
+    let score=[];
+    score[score.length]={
+        no:201901,
+        name:'米园园',
+        ch:70,
+        maths:69,
+        en:70
+    }
+    score[score.length]={
+        no:201902,
+        name:'张琼月',
+        ch:100,
+        maths:79,
+        en:67
+    }
+    score[score.length]={
+        no:201903,
+        name:'李佳敏',
+        ch:42,
+        maths:100,
+        en:18
+    }
+    score[score.length]={
+        no:201904,
+        name:'唐莉',
+        ch:42,
+        maths:80,
+        en:92
+    }
+    score[score.length]={
+        no:201905,
+        name:'曹泽彦',
+        ch:42,
+        maths:65,
+        en:56
+    }
+    score[score.length]={
+        no:201906,
+        name:'刘木彬',
+        ch:78,
+        maths:98,
+        en:99
+    }
+    score[score.length]={
+        no:201907,
+        name:'陈良旺',
+        ch:76,
+        maths:79,
+        en:54
+    }
+    score[score.length]={
+        no:201908,
+        name:'林诚浩',
+        ch:75,
+        maths:67,
+        en:87
+    }
+    score[score.length]={
+        no:201909,
+        name:'单创新',
+        ch:71,
+        maths:89,
+        en:72
+    }
+    
+    score.sort(function(a,b){
+       x1=a.ch+a.maths+a.en;
+       x2=b.ch+b.maths+b.en;
+        return x2-x1;
+    })
+    let str="";
+    let i=0;
+    let sum=0;
+    score.forEach(el=> {
+        if(sum!=el.ch+el.maths+el.en){
+            i++;
+            sum=el.ch+el.maths+el.en;
+        }
+        
+       str+="<tr><td>"+el.no+"</td> <td>"+el.name+"</td> <td>"+el.ch+"</td><td>"+el.maths+"</td><td>"+el.en+"</td><td>"+sum+"</td><td>"+i+"</td></tr>"
+    });
+    document.getElementById('tbody').innerHTML=str;
+</script>
+</html>

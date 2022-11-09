@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="less/slideShow.css">
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ body{
+background-color:#1F1E40 ;
+    
+}  
+ 
+div.box {
+  margin: 150px auto;
+  width: 450px;
+  height: 250px;
+  overflow: hidden;
+  border: 1px solid white;
+  position: relative;
+}
+div.box nav {
+  position: relative;
+}
+div.box nav > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+}
+div.box nav > div img {
+  width: 450px;
+  height: 250px;
+  float: left;
+}
+div.box div.num {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+div.box div.num ul li {
+  width: 40px;
+  height: 40px;
+  float: left;
+  line-height: 40px;
+  text-align: center;
+  margin: 5px;
+  font-size: 20px;
+  background-color: #056DBD;
+  border: 1px solid #1F1E40;
+}
+div.box div.num ul li.active {
+  background-color: #FFB10F;
+}
+div.box div.num ul li a {
+  text-decoration: none;
+}
+ 
+</style>
+<body> 
+        <div class="box"id="box">
+            <nav>
+                <div id="div2">
+                    <img src="../images/img6.jpg" alt="">
+                    <img src="../images/img2.png" alt="">
+                    <img src="../images/img3.png" alt="">
+                    <img src="../images/img4.jpg" alt="">
+                    <img src="../images/img5.jpg" alt="">
+                </div>
+            </nav>
+            <div id="num"class="num">
+                    <ul>
+                     <li class="active"> <a href="##">1</a></li>
+                     <li> <a href="##">2</a></li>
+                     <li> <a href="##">3</a></li>
+                     <li> <a href="##">4</a></li>
+                     <li> <a href="##">5</a></li>
+                    </ul>
+            </div>
+            </div>
+     
+</body>
+<script src="../框架/kjia.js"></script>
+<script>
+    let div1=document.getElementById('box');
+    let div2=document.getElementById('div2');
+    let num=document.getElementById('num');
+    var lis=document.getElementsByTagName('li');
+    var nums=0;
+    let timer;
+
+    for(let i=0;i<lis.length;i++){
+            lis[i].index=i;
+                lis[i].onclick=function(){
+                    clearInterval(timer);
+                    nums=this.index;
+                    moveShow();
+                } 
+        }
+        function   moveShow(){
+            clear();
+                    lis[nums].className='active';
+                    //function moveTo3(obj,attr,iTarget,speed,action)
+                    moveTo3(div2,'top',-nums*250,8)
+        }
+        timer=setInterval(function(){
+            if(nums==4){
+                nums=0
+            }
+            else{
+                nums++;
+            }
+            moveShow();
+        },3000)
+        div2.onmouseover=function(){
+            clearInterval(timer);
+        }
+        div2.onmouseout=function(){
+            timer=setInterval(function(){
+            if(nums==4){
+                nums=0
+            }
+            else{
+                nums++;
+            }
+            moveShow();
+        },2000)
+        }
+      function clear(){
+        for(let i=0;i<lis.length;i++){
+                            if(lis[i].className=='active'){
+                                lis[i].className='';
+                                break
+                            }
+                    }
+      }
+    
+
+               
+
+</script>
+</html>

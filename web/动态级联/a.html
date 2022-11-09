@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{background-color: #3DA1FE;}
+    div.box{
+        margin: 50px auto;
+        width: 500px;
+        border: 1px solid black;
+        padding: 20px;
+        background-color:  white;;
+    }
+   
+    ul{
+        margin-left: 50px;
+        padding: 30px;
+        border: 1px solid #0d5394;
+        display: flex;
+        padding-right: none;
+        margin-bottom: 20px;
+    }
+    ul li{
+        list-style: none;
+        
+    }
+    ul img{
+        margin: 0 10px;
+        width: 25%;
+        height:25%;
+        margin-right: none;
+    }
+    div.pop{
+        display:none;
+        background-color: white;
+        position: absolute;
+        border: 1px solid black;
+        padding: 20px;
+        z-index: 11;
+        border-radius:  10px;
+
+    }
+    div.pop label{
+        display: block;
+        height: 30px;
+        line-height: 30px;
+      
+    }
+    a,a:visited{
+        color: #77CEFA;
+        text-decoration: none;
+    }
+    a:hover,a:visited:hover{
+        text-decoration:underline;
+    }
+  button#yes{
+      padding: 5px 20px;
+      border-radius:  10px;
+      margin: 10px 100px 0;
+  }
+  p{
+      line-height: 30px;
+  }
+</style>
+<body>
+    <div class="box" id="box">
+         <h2>订单结算</h2>
+         <p>您订购如下商品:</p>
+         <ul>
+             <div class="left">
+             <li>小天鹅洗衣机一台888元&ensp;<span>1</span>台&ensp;<strong>&ensp;800</strong>元</li>
+             <li>哇哈哈AD钙奶&ensp;<span>1</span>台&ensp;<strong>&ensp;56</strong>元</li>
+             <li>心相印清风系列抽纸&ensp;<span>1</span>台&ensp;<strong>&ensp;23</strong>元</li>
+             <li>百乐果汁笔0.7&ensp;<span>1</span>台&ensp;<strong>&ensp;45</strong>元</li>
+             <li>程光粤商黑糖话梅棒棒糖&ensp;<span>1</span>台&ensp;<strong>&ensp;10</strong>元</li>
+            </div>
+             <img src="../images/img1.png">
+         </ul>
+         <p>本次需要费用：<span>450</span>元</p>
+         <p>本次订单号为：1002333019041540001</p>
+         <p></p>
+         <form action="">
+             <label for="">请输入你的地址
+                 <input type="text" name="" id="address">
+                 <a href="##">选择地址</a>
+             </label>
+         </form>
+   
+    </div>
+    <div class="pop" id="pop">
+        <label for="">&emsp;请选择省份
+           <select  class="area">
+               <option value="-1">--选择--</option>
+               
+           </select>
+        </label>
+        <label for=""class="city" >&emsp;请选择城市
+           <select id="city">
+               <option value="-1">--选择--</option>
+               
+           </select>
+        </label>
+        <label for="">&emsp;请选择街道
+           <input type="text" id="street">
+           <!-- <option value="-1">--选择--</option> -->
+        </label>
+        <label for="">请选择门牌号
+            <input type="text" id="door">
+         </label>
+         <button id="yes">提交</button>
+    </div>
+</body>
+<script>
+    let arr=[];
+    arr[arr.length]={
+        name:'云南省',
+        city:[{
+            cNo:'001',
+            name:'昆明市',
+        
+        },
+        {
+            cNo:'002',
+            name:'宣威市',
+            
+        },{
+            cNo:'003',
+            name:'腾冲市',
+            
+        }]
+    }
+    arr[arr.length]={
+        name:'重庆市',
+        city:[{
+            cNo:'004',
+            name:'永川区',
+        
+        },
+        {
+            cNo:'005',
+            name:'渝中区',
+            
+        },{
+            cNo:'006',
+            name:'合川区',
+            
+        }]
+    }
+    arr[arr.length]={
+      name:"贵州省",
+      city:[
+          {
+            dm:"520100",
+            name:"贵阳市",
+            area:
+            [
+                {
+                    dm:"520102",
+                    name:"南明区",
+                },
+                {
+                    dm:"520103",
+                    name:"云岩区",
+                },
+                {
+                    dm:"520111",
+                    name:"花溪区",
+                },
+                {
+                    dm:"520112",
+                    name:"乌当区",
+                }, {
+                    dm:"520113",
+                    name:"白云区",
+                },   
+                            
+            ]
+      },
+     
+    
+    ],
+  } ; 
+
+  arr[arr.length]={
+      name:"四川省",
+      city:[
+          {
+            dm:"01",
+            name:"成都市",
+            area:
+            [
+                {
+                    dm:"0101",
+                    name:"锦江区",
+                },
+                {
+                    dm:"0102",
+                    name:"青羊区",
+                },
+                {
+                    dm:"0104",
+                    name:"武侯区",
+                },
+                {
+                    dm:"0106",
+                    name:"龙泉区",
+                }, {
+                    dm:"0108",
+                    name:"都江堰市",
+                },   
+                            
+            ]
+            },
+            {
+            dm:"02",
+            name:"自贡市",
+            area:
+            [
+                {
+                    dm:"0201",
+                    name:"自流井区",
+                },
+                {
+                    dm:"0202",
+                    name:"贡井区",
+                },
+                {
+                    dm:"0203",
+                    name:"大安区",
+                },
+                {
+                    dm:"0204",
+                    name:"沿滩区",
+                }, {
+                    dm:"0205",
+                    name:"荣县",
+                },   
+                            
+            ]
+            },
+            {
+            dm:"03",
+            name:"攀枝花市",
+            area:
+            [
+                {
+                    dm:"0301",
+                    name:"东区",
+                },
+                {
+                    dm:"0302",
+                    name:"西区",
+                },
+                {
+                    dm:"0303",
+                    name:"仁和区",
+                },
+                {
+                    dm:"0304",
+                    name:"米易县",
+                }, {
+                    dm:"0305",
+                    name:"盐边县",
+                },   
+                            
+            ]
+            },
+            
+     
+    ],
+  } ; 
+  
+    let oDiv=document.getElementById('box');
+    let oAddress=oDiv.querySelector('form label a');
+    let oPop=document.getElementById('pop');
+    let address=document.getElementById('address');
+    let oCity=document.getElementById('city');
+    let oStreet=document.getElementById('street');
+    let oDoor=document.getElementById('door');
+
+    let oArea=oPop.querySelector('select.area');
+    let oYes=document.getElementById('yes');
+    oAddress.onclick=function(){
+        oPop.style.display='block';
+        oPop.style.left=(document.documentElement.clientWidth-oPop.offsetWidth)/2+'px';
+        oPop.style.top=100+'px';
+        let oNav=document.createElement('nav');
+        oNav.style.position='fixed';
+        oNav.id='xzw123';
+        oNav.style.width='100%';
+        oNav.style.height='100%';
+        oNav.style.backgroundColor='#3b3b3b';
+        oNav.style.opacity=0.75;
+        oNav.style.zIndex=10;
+        oNav.style.top=0;
+
+
+document.body.appendChild(oNav);
+       arr.forEach((el,i)=>{
+            let option=new Option(el.name,i);
+            oArea.appendChild(option);
+        });
+      
+    }
+    
+    oArea.onchange=function(){
+            let i=this.value;
+            oCity.length=1;
+            if(i!=-1){
+                arr[i].city.forEach((el,i)=>{
+                    let option=new Option(el.name,i);
+                    oCity.appendChild(option);
+                })
+            }
+        }
+        oArea.onchange=function(){
+            let i=this.value;
+            oCity.length=1;
+            if(i!=-1){
+                arr[i].city.forEach((el,i)=>{
+                    let option=new Option(el.name,i);
+                    oCity.appendChild(option);
+                })
+            }
+        }
+        oYes.onclick=function(){
+            if(oArea.value!=-1 && oCity.value!=-1 && oStreet.value!='' && oDoor.value!=''){
+                let arrText=arr[oArea.value].name+'--'+arr[oArea.value].city[oCity.value].name+'--'+oStreet.value+'--'+oDoor.value;
+
+                address.value=arrText;
+            oPop.style.display='none';
+            let oNav=document.getElementById('xzw123');
+            document.body.removeChild(oNav);
+            }else{
+                alert('信息未填完全')
+            }
+        }
+</script>
+</html>

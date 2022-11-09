@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body{
+    background-color:#1F1E40 ;
+}
+div{
+        margin: 100px auto 0;
+        width: 300px;
+        
+  
+    }
+</style>
+<body>
+    <div>
+     
+    <textarea name="" id="text1" cols="30" rows="10"></textarea><br>
+    <input type="button" value="运行"id="btn1">
+    <input type="button" value="清空"id="btn2">
+
+    </div>
+ 
+   
+</body>
+<script>
+    let oText=document.getElementById('text1');
+    let btn1=document.getElementById('btn1');
+    let btn2=document.getElementById('btn2');
+    btn1.onclick=function(){
+         let newWin=window.open('about:blank','_blank');
+         newWin.document.write(oText.value)
+    }
+    btn2.onclick=function(){
+        oText.value=''
+    }
+
+</script>
+</html>
