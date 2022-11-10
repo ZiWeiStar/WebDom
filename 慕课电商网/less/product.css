@@ -1,0 +1,84 @@
+main {
+  width: 1000px;
+  margin: 15px auto 0;
+  position: relative;
+  padding-left: 195px;
+  box-sizing: border-box;
+}
+main aside {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 190px;
+  border: 1px solid #D6D6D6;
+  background-color: #F3F3F3;
+  box-sizing: border-box;
+}
+main aside h4 {
+  line-height: 40px;
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 1px solid #D6D6D6;
+}
+main aside dl {
+  border-bottom: 1px solid #D6D6D6;
+  padding: 5px 20px;
+}
+main aside dl:last-child {
+  border-bottom: none;
+}
+main aside dl dt {
+  font-size: 13px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+main aside dl dd a,
+main aside dl dd a:visited {
+  display: inline-block;
+  width: 48%;
+  font-size: 12px;
+  font-family: 'simsun';
+  line-height: 1.7;
+}
+main aside dl dd a:hover,
+main aside dl dd a:visited:hover {
+  color: red;
+}
+main section {
+  width: 100%;
+  height: 1200px;
+}
+main section > img {
+  width: 100%;
+  vertical-align: middle;
+}
+main section article h4 {
+  margin: 10px 0;
+  line-height: 40px;
+  border-bottom: 2px solid #CDCDCD;
+  padding-left: 10px;
+  position: relative;
+}
+main section article h4::before {
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 2px;
+  background-color: #086DBB;
+  top: 40px;
+  left: 0;
+}
+main section article div {
+  display: flex;
+  flex-wrap: wrap;
+}
+main section article div figure {
+  width: 25%;
+}
+main section article div figure i {
+  display: block;
+  height: 176px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

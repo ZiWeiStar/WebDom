@@ -1,0 +1,489 @@
+@charset 'utf-8';
+a:hover {
+  text-decoration: underline;
+}
+main {
+  width: 1000px;
+  margin: auto;
+}
+main > p {
+  line-height: 50px;
+  padding-left: 10px;
+}
+main > p a {
+  display: inline-block;
+  font-family: 'simsun';
+  font-size: 14px;
+}
+main > p a:first-child {
+  font-weight: bold;
+}
+main div.top {
+  display: flex;
+  background-color: white;
+}
+main div.top > aside {
+  width: 310px;
+  border: 1px solid #ccc;
+  border-right: none;
+  box-sizing: border-box;
+}
+main div.top > aside b {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main div.top > aside p {
+  display: flex;
+  justify-content: center;
+}
+main div.top > aside p img {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+main div.top > aside p img:first-child {
+  border: 1px solid #2F7EE5;
+}
+main div.top section {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 10px;
+  line-height: 1.5;
+}
+main div.top section h4 {
+  margin-left: 10px;
+  color: #333333;
+  margin: 5px 0 15px;
+}
+main div.top section > p {
+  margin-left: 10px;
+  font-family: 'simsun';
+  font-size: 13px;
+}
+main div.top section > p price {
+  margin-left: 10px;
+  color: red;
+  font-size: 26px;
+  font-weight: bold;
+}
+main div.top section > p span {
+  margin-left: 30px;
+}
+main div.top section > div {
+  background-color: #F2F2F2;
+  padding: 20px;
+  font-size: 13px;
+  font-family: 'simsun';
+  line-height: 2;
+}
+main div.top section > div dl dt {
+  width: 70px;
+  float: left;
+}
+main div.top section > div dl dd {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  transform: translateY(-5px);
+}
+main div.top section > div dl dd select {
+  height: 26px;
+  vertical-align: top;
+}
+main div.top section > div dl:nth-child(2) {
+  margin: 15px 0;
+}
+main div.top section > div dl:nth-child(2) span {
+  padding: 8px 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+main div.top section > div dl:nth-child(3) {
+  margin: 25px 0;
+}
+main div.top section > div dl:nth-child(3) span {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+main div.top section > div dl:nth-child(4) {
+  margin: 18px 0;
+}
+main div.top section > div dl:nth-child(4) span {
+  padding: 10px;
+  background-color: #F3F3F3;
+  border: 1px solid #ccc;
+}
+main div.top section > div dl:nth-child(4) span:nth-child(3) {
+  padding: 10px 20px;
+  margin-left: -10px;
+  background-color: white;
+}
+main div.top section > div dl:nth-child(4) span:nth-child(4) {
+  margin: 0 15px 0 -10px;
+}
+main div.top section aside {
+  margin: 20px 0 30px 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+main div.top section aside a {
+  font-size: 13px;
+  font-weight: bold;
+  color: #0075C9;
+}
+main div.top section button {
+  background-color: #FE8800;
+  width: 150px;
+  padding-left: 40px;
+  height: 45px;
+  margin-left: 70px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  color: white;
+}
+main div.top section aside.down {
+  margin: 40px 0 20px 20px;
+  font-size: 13px;
+  color: #999;
+  font-family: 'simsun';
+  font-weight: normal;
+}
+main div.down {
+  margin-top: 15px;
+  display: flex;
+}
+main div.down aside {
+  width: 190px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+main div.down aside figure {
+  background-color: white;
+  border: 1px solid #ccc;
+}
+main div.down aside figure h4 {
+  line-height: 40px;
+  padding-left: 20px;
+  border-bottom: 1px solid #ccc;
+  background-color: #F3F3F3;
+}
+main div.down aside figure a {
+  display: block;
+  padding: 0 20px;
+}
+main div.down aside figure a div {
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main div.down aside figure a p {
+  font-size: 12px;
+  font-family: 'simsun';
+  color: #999;
+}
+main div.down aside figure a p price {
+  display: block;
+  margin-top: 10px;
+  color: red;
+}
+main div.down aside figure.down {
+  margin-top: 25px;
+}
+main div.down article {
+  flex: 1;
+  position: relative;
+}
+main div.down article > input {
+  opacity: 0;
+  position: absolute;
+  width: 33.3%;
+  height: 40px;
+  top: 0;
+  z-index: 10;
+}
+main div.down article > input:nth-child(1) {
+  left: 0;
+}
+main div.down article > input:nth-child(3) {
+  left: 33.3%;
+}
+main div.down article > input:nth-child(5) {
+  left: 66.6%;
+}
+main div.down article > span {
+  position: absolute;
+  width: 33.3%;
+  line-height: 40px;
+  text-align: center;
+  background-color: #F0F0F0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  top: 0;
+}
+main div.down article > span:nth-child(2) {
+  left: 0;
+}
+main div.down article > span:nth-child(4) {
+  left: 33.3%;
+  border-left: none;
+  border-right: none;
+}
+main div.down article > span:nth-child(6) {
+  left: 66.6%;
+}
+main div.down article > input:checked + span {
+  background-color: #0479C9;
+  color: white;
+}
+main div.down article > div {
+  display: none;
+  position: absolute;
+  background-color: white;
+  left: 0;
+  top: 42px;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-top: none;
+  box-sizing: border-box;
+}
+main div.down article > div.up img {
+  padding: 30px 0 30px 110px;
+}
+main div.down article > div.up img:last-child {
+  padding: 0;
+  width: 100%;
+}
+main div.down article > div.up h4 {
+  color: #1B5BA2;
+  line-height: 33px;
+  border-bottom: 2px solid #D7D7D7;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+main div.down article > div.up h4 span {
+  font-size: 13px;
+  color: #7D7D7D;
+}
+main div.down article > div.up h4::before {
+  content: '';
+  position: absolute;
+  width: 20%;
+  height: 2px;
+  background-color: #2458A3;
+  margin-top: 34px;
+}
+main div.down article > div.up p {
+  font-size: 14px;
+  font-family: 'simsun';
+  line-height: 1.7;
+  color: #6A6A6A;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+main div.down article > div.mid h4 {
+  color: #656565;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+main div.down article > div.mid section {
+  display: flex;
+}
+main div.down article > div.mid section b {
+  flex: 1;
+  color: #FC8D00;
+  font-size: 40px;
+  font-weight: normal;
+}
+main div.down article > div.mid section b span {
+  color: #68647D;
+  font-size: 16px;
+}
+main div.down article > div.mid section aside {
+  flex: 4;
+}
+main div.down article > div.mid section aside div.up {
+  position: absolute;
+}
+main div.down article > div.mid section aside div.up span {
+  background-color: #BEBEBE;
+  padding: 3px 25px;
+  color: white;
+  font-size: 13px;
+  font-family: 'simsun';
+}
+main div.down article > div.mid section aside div.up span:not(:first-child) {
+  margin-left: -5px;
+}
+main div.down article > div.mid section aside div.up:after {
+  position: absolute;
+  content: attr(data-no);
+  background-color: #7D7D7D;
+  padding: 3px;
+  color: white;
+  right: 42px;
+  top: -33px;
+}
+main div.down article > div.mid section aside div.up::before {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top-color: #7D7D7D;
+  right: calc(6% + 23px);
+  top: -6px;
+}
+main div.down article > div.mid section aside div.down {
+  margin-top: 35px;
+  font-size: 12px;
+  font-family: 'simsun';
+  color: #6B6887;
+}
+main div.down article > div.mid p.pj {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #F2F2F2;
+  line-height: 30px;
+  font-size: 12px;
+  font-family: 'simsun';
+  margin: 50px -15px 30px;
+  padding: 0 15px;
+}
+main div.down article > div.mid p.pj button {
+  height: 24px;
+  background-color: transparent;
+  border: 1px solid #CDCDCD;
+  border-bottom: none;
+}
+main div.down article > div.mid p.pj span.active {
+  color: #337DE8;
+  font-weight: bold;
+}
+main div.down article > div.mid p.pj span:nth-child(4) {
+  margin-right: 300px;
+}
+main div.down article > div.mid > dl {
+  display: flex;
+  margin: 30px 0;
+  font-family: 'simsun';
+  color: #7E7C91;
+}
+main div.down article > div.mid > dl dt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  line-height: 1.5;
+}
+main div.down article > div.mid > dl dd {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+  line-height: 2.5;
+}
+main div.down article > div.mid > dl dd:nth-child(2) {
+  margin-right: 200px;
+  align-items: flex-start;
+}
+main div.down article > div.mid > dl dd:nth-child(2) b {
+  margin-right: 30px;
+}
+main div.down article > div.mid > dl dd:nth-child(3) span {
+  color: #A9A9A9;
+}
+main div.down article > div.mid p.page {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 50px;
+}
+main div.down article > div.mid p.page span {
+  border: 1px solid #ccc;
+  padding: 3px 10px;
+  margin-right: 10px;
+  font-size: 12px;
+}
+main div.down article > div.mid p.page span input {
+  width: 20px;
+}
+main div.down article > div.mid p.page span.none {
+  border: none;
+}
+main div.down article > div.mid p.page span.active {
+  background-color: #E9E9E9;
+  color: red;
+}
+main div.down article > div.mid p.page span.noActive {
+  color: #D9D9D9;
+}
+main div.down article > div.down {
+  padding: 15px;
+  margin-top: 0;
+}
+main div.down article > div.down > p {
+  background-color: #F3F3F3;
+  font-size: 12px;
+  line-height: 2;
+  font-family: 'simsun';
+  padding: 10px;
+  color: #797979;
+}
+main div.down article > div.down dl {
+  margin: 30px 0;
+  display: flex;
+  font-family: 'simsun';
+}
+main div.down article > div.down dl dt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  color: #767676;
+  line-height: 2;
+}
+main div.down article > div.down dl dd {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  line-height: 3;
+}
+main div.down article > div.down dl dd h5 {
+  padding-right: 30px ;
+  display: flex;
+  justify-content: space-between;
+}
+main div.down article > div.down dl dd h5 i {
+  font-size: 12px;
+  color: #aaa;
+}
+main div.down article > div.down dl dd span {
+  font-size: 12px;
+  color: #767676;
+}
+main div.down article > div.down dl dd p {
+  padding: 20px;
+  background-color: #F1F1F1;
+  font-size: 14px;
+}
+main div.down article > div.down dl dd p i {
+  color: #7B7B7B;
+  font-style: normal;
+}
+main div.down article input.s1:checked ~ div.up {
+  display: block;
+}
+main div.down article input.s2:checked ~ div.mid {
+  display: block;
+}
+main div.down article input.s3:checked ~ div.down {
+  display: block;
+}

@@ -1,0 +1,246 @@
+@charset 'utf-8';
+header.h2 section {
+  background: url('../images/logo.jpg') 30px center no-repeat;
+  height: 80px;
+  line-height: 80px;
+  width: 1000px;
+  margin: auto;
+  padding-left: 500px;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+header.h2 section aside {
+  display: flex;
+  font-size: 12px;
+}
+header.h2 section aside span {
+  line-height: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #F9F7FC;
+}
+header.h2 section aside span:not(:last-child) {
+  margin-right: 130px;
+}
+header.h2 section aside span:not(:last-child):before {
+  position: absolute;
+  content: '';
+  width: 176px;
+  height: 3px;
+  background-color: #88BDE9;
+  margin-top: 10px;
+  margin-left: 97px;
+}
+header.h2 section aside span:first-child::before {
+  width: 163px;
+}
+header.h2 section aside span.complate {
+  color: #F9F000;
+}
+header.h2 section aside span.complate i {
+  background-color: #F9F000;
+  color: black;
+}
+header.h2 section aside span.complate::before {
+  background-color: #F9F000;
+}
+header.h2 section aside span i {
+  font-family: 'simsun';
+  font-style: normal;
+  padding: 0 9px;
+  background-color: #88BDE9;
+  border-radius: 50%;
+}
+.h4 {
+  border: 1px solid #ccc;
+  background-color: white;
+}
+.h4 h4 {
+  line-height: 30px;
+  padding-left: 10px;
+  background-color: #F3F3F3;
+  border-bottom: 1px solid #ccc;
+  font-weight: normal;
+}
+main {
+  width: 1000px;
+  margin: 30px auto;
+}
+main div.b1 {
+  border: 1px solid #ccc;
+  background-color: white;
+}
+main div.b1 h4 {
+  line-height: 30px;
+  padding-left: 10px;
+  background-color: #F3F3F3;
+  border-bottom: 1px solid #ccc;
+  font-weight: normal;
+}
+main div.b1 form {
+  padding: 30px 0 30px 50px;
+  line-height: 3;
+  font-family: 'simsun';
+  font-size: 13px;
+}
+main div.b1 form label {
+  display: block;
+}
+main div.b1 form label span {
+  display: inline-block;
+  width: 65px;
+  text-align: right;
+  margin-right: 10px;
+  position: relative;
+}
+main div.b1 form label span::before {
+  position: absolute;
+  content: '*';
+  color: red;
+  left: 0;
+  top: 0;
+}
+main div.b1 form button {
+  padding: 5px 15px;
+  background-color: #4493FC;
+  color: white;
+  border: 1px solid #3685EE;
+  outline: none;
+  margin: 20px 0 0 65px;
+}
+main div.b2 {
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+main div.b2 h4 {
+  line-height: 30px;
+  padding-left: 10px;
+  background-color: #F3F3F3;
+  border-bottom: 1px solid #ccc;
+  font-weight: normal;
+}
+main div.b2 label {
+  display: block;
+  margin: 10px 0 20px 30px;
+  font-family: 'simsun';
+  font-size: 13px;
+}
+main div.b2 button {
+  padding: 4px 15px;
+  margin-left: 50px;
+  border: none;
+  margin-bottom: 30px;
+}
+main div.b2 button.f {
+  background-color: #408EFA;
+  color: white;
+}
+main div.b2 button.l {
+  background-color: #F6F6F6;
+  color: 696969;
+  border: 1px solid #ccc;
+}
+main div.b3 {
+  margin-top: 30px;
+  font-family: 'simsun';
+  border: 1px solid #ccc;
+  background-color: white;
+}
+main div.b3 h4 {
+  line-height: 30px;
+  padding-left: 10px;
+  background-color: #F3F3F3;
+  border-bottom: 1px solid #ccc;
+  font-weight: normal;
+}
+main div.b3 h4 {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 50px;
+}
+main div.b3 h4 a,
+main div.b3 h4 a:visited {
+  color: #287BF3;
+  font-size: 12px;
+}
+main div.b3 table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+  text-align: center;
+  font-family: 'simsun';
+  font-size: 14px;
+}
+main div.b3 table thead tr th {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  width: 10%;
+}
+main div.b3 table thead tr th:nth-child(1) {
+  width: 20%;
+}
+main div.b3 table thead tr th:nth-child(2) {
+  width: 40%;
+}
+main div.b3 table tbody tr td {
+  padding: 5px 0;
+  font-size: 13px;
+}
+main div.b3 table tbody tr td:last-child {
+  color: red;
+}
+main div.b3 > p {
+  padding: 20px 0 0 50px;
+  font-size: 12px;
+}
+main div.b3 > p.p1 {
+  border-top: 1px solid #ccc;
+  color: #317CFC;
+}
+main div.b3 > p.p2 {
+  color: #E70304;
+}
+main div.b3 figure {
+  display: flex;
+  padding: 20px 0 20px 50px;
+}
+main div.b3 figure b {
+  margin-right: 15px;
+}
+main div.b3 figure figcaption {
+  font-size: 13px;
+  font-family: 'simsun';
+  line-height: 1.7;
+  color: #686868;
+}
+main div.b4 {
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+main div.b4 h4 {
+  line-height: 30px;
+  padding-left: 10px;
+  background-color: #F3F3F3;
+  border-bottom: 1px solid #ccc;
+  font-weight: normal;
+}
+main div.b4 aside {
+  padding: 20px 30px;
+  line-height: 30px;
+  text-align: right;
+}
+main div.b4 aside span {
+  font-size: 30px;
+  color: #EB0000;
+}
+main div.b4 aside button {
+  padding: 8px 30px;
+  background-color: #EB0000;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-top: 15px;
+}

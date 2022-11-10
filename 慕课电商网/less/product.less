@@ -1,0 +1,87 @@
+main{
+    width: 1000px;
+    margin: 15px auto 0;
+    position: relative;
+    padding-left: 195px;
+    box-sizing: border-box;
+    aside{
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 190px;
+        border: 1px solid #D6D6D6;
+        background-color: #F3F3F3;
+        box-sizing: border-box;
+        h4{
+            line-height: 40px;
+            text-align: center;
+            font-weight: 600;
+            border-bottom: 1px solid #D6D6D6;
+        }
+        dl{
+            border-bottom: 1px solid #D6D6D6;
+            padding: 5px 20px;  
+            &:last-child{
+                border-bottom: none;
+            } 
+            dt{
+                font-size: 13px;
+                margin: 10px 0;
+                font-weight: bold;
+            }
+            dd{
+                a,a:visited{
+                    display: inline-block;
+                    width: 48%;
+                    font-size: 12px;
+                    font-family: 'simsun';
+                    line-height: 1.7;
+                    &:hover{
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+    section{
+        width: 100%;
+        height: 1200px;
+        >img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        article{
+            h4{
+                margin:10px 0;
+                line-height: 40px;
+                border-bottom:2px solid #CDCDCD;
+                padding-left: 10px;
+                position: relative;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 30%;
+                    height: 2px;
+                    background-color: #086DBB;
+                    top: 40px;
+                    left: 0;
+                }
+            }
+            div{
+                display: flex;
+                flex-wrap: wrap;
+                figure{
+                    width: 25%;
+                    i{
+                        display: block;
+                        height: 176px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+
+        }
+    }
+}

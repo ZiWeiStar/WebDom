@@ -1,0 +1,145 @@
+@charset 'utf-8';
+* {
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #1D7AD9;
+}
+header div {
+  width: 460px;
+  height: 80px;
+  margin: auto;
+  background: url('../images/img25.jpg') left center no-repeat;
+  padding: 30px 0 0 140px;
+  box-sizing: border-box;
+  font-size: 22px;
+  color: white;
+}
+header.h2 {
+  margin-top: 100px;
+}
+main.m1 {
+  width: 460px;
+  margin: 10px auto 0;
+  padding: 40px 85px 20px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: #9A9A9A;
+}
+main.m1 label {
+  display: block;
+  margin: 20px 0;
+}
+main.m1 label input.txt {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #9A9A9A;
+}
+main.m1 label.l3 {
+  color: #2F2F2F;
+}
+main.m1 label.l3 input {
+  vertical-align: middle;
+}
+main.m1 label.l3 input.i1 {
+  margin-left: 10px;
+}
+main.m1 label.l3 a,
+main.m1 label.l3 a:visited {
+  color: #2F2F2F;
+  margin-left: 10px;
+}
+main.m1 label.btn a {
+  display: block;
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  border: 1px solid #CDE4F6;
+  background-image: -webkit-linear-gradient(bottom, #d0ced3, #dadada, #fcfafb);
+  font-size: 18px;
+  color: #5D5D5D;
+  text-decoration: none;
+  letter-spacing: 10px;
+}
+main.m1 label.a {
+  font-family: 'simsun';
+  margin-right: -15px;
+}
+main.m1 label.a a,
+main.m1 label.a a:visited {
+  text-decoration: none;
+  color: #646464;
+}
+main.m1 label.a a span,
+main.m1 label.a a:visited span {
+  display: inline-block;
+  font-size: 20px;
+  transform: rotateX(180deg) translateY(4px);
+}
+main.m1 label.m1 a {
+  position: absolute;
+  padding: 6px 15px;
+  background-color: #7DBE56;
+  color: white;
+  font-size: 18px;
+  font-family: 'simsun';
+  text-decoration: none;
+  margin-top: 20px;
+  margin-left: 190px;
+}
+main.m2 {
+  width: 635px;
+  margin: 10px auto 30px;
+  border: 1px solid #ccc;
+  padding: 60px 140px 30px 100px;
+  box-sizing: border-box;
+}
+main.m2 label {
+  display: block;
+  line-height: 60px;
+}
+main.m2 label:not(.not) {
+  display: flex;
+  align-items: center;
+  color: #989898;
+  font-family: 'simsun';
+}
+main.m2 label:not(.not) span {
+  flex: 1;
+  text-align: right;
+  margin-right: 20px;
+}
+main.m2 label:not(.not) span::before {
+  content: '*';
+  position: absolute;
+  color: #FF0105;
+  margin-left: -15px;
+}
+main.m2 label:not(.not) input {
+  flex: 2;
+  height: 30px;
+  border: 1px solid #CDCDCD;
+}
+main.m2 label.not {
+  padding-left: 140px;
+}
+main.m2 label.not.n1 {
+  font-size: 12px;
+  font-family: 'simsun';
+  color: #343434;
+}
+main.m2 label.not.n1 input {
+  vertical-align: middle;
+}
+main.m2 label.not.n2 input {
+  width: 270px;
+  height: 36px;
+  border: none;
+  font-size: 15px;
+  letter-spacing: 5px;
+  color: #606060;
+  background-image: -webkit-linear-gradient(top, #f0f0f0, #dddddd);
+}
