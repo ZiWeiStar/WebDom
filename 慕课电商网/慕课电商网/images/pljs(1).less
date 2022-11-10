@@ -1,0 +1,522 @@
+a,a:visited{
+    text-decoration: none;
+    font-family: 'simsun';
+    font-size: 14px;
+    color: #666;
+}
+body{
+    background-color: #F0F0F0;
+}
+main{
+    width: 1000px;
+    margin: 20px auto 0;
+    div.part1{
+        margin-left: 30px;
+        margin-bottom: 10px;
+        display: flex;
+        a,a:visited{
+            font-size: 13px;
+            &.blod{
+                font-weight: bold;
+            }
+        }
+    }
+    div.part2{
+        display: flex;
+        background-color: white;
+        aside{
+            flex: 1;
+            border: 1px solid #ccc;
+            div.big{
+                width: 200px;
+                margin: 30px auto;
+                height: 300px;
+                overflow: hidden;
+                img{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            div.small{
+                margin: 0 10px;
+                display: flex;
+                a,a:visited{
+                    flex: 1;
+                    img{
+                        width: 100%;
+                        height: 60px;
+                    }
+                    &:not(:last-child){
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+        section{
+            flex: 2;
+            border: 1px solid #ccc;
+            border-left: none;
+            padding: 20px 10px 10px;
+            font-family: 'simsun';
+            h4{
+                color: #2F2F2F;
+                line-height: 1.5;
+                margin-left: 20px;
+            }
+            p{
+                margin: 10px;
+                font-size: 13px;
+                color: #686868;
+                span{
+                    font-size: 25px;
+                    color: #D60000;
+                    font-weight: bold;
+                }
+                &.p2{
+                    display: flex;
+                    align-items: center;
+                    i{
+                        display: inline-block;
+                        width: 56px;
+                        height: 20px;
+                        line-height: 20px;
+                        margin-left: 30px;
+                        background: url('icon10.jpg') no-repeat;
+                    }                    
+                }
+            }
+            div.order{
+                padding: 15px 0 15px 10px;
+                background-color: #F2F2F2;
+                dl{
+                    line-height: 2;
+                    display: flex;
+                    align-items: center;
+                    color: #646464;
+                    font-size: 12px;
+                    margin-bottom: 15px;
+                    dt{
+                       width: 60px;
+                    }
+                    select{
+                       border: 1px solid #C0C0C0;
+                       outline: none;
+                       height: 26px;
+                    }
+                    span{
+                        padding: 5px 15px;
+                        border: 1px solid #C0C0C0;
+                        margin-right: 10px;
+                        &.active{
+                            border-color: #337EE4;
+                            background-color: white;
+                        }
+                        &.add{
+                            padding: 5px 2px;
+                            background-color: white;
+                            margin-right: 0;
+                        }
+                        &.number{
+                            border-left: none;
+                            border-right: none;
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+            p.selected{
+                font-weight: bold;
+                span{
+                    color: #0978C0;
+                    font-size: 13px;
+                }
+            }
+            article{
+                margin: 10px 60px;
+                padding: 25px 0;
+                display: flex;
+                justify-content: space-around;
+                position: relative;
+                &::after{
+                    position: absolute;
+                    content: '';
+                    width: 1px;
+                    height: 100%;
+                    background-color: #E6E6E6;
+                    top: 0;
+                }
+                button{
+                    border: none;
+                    outline: none;
+                    height: 50px;
+                    width: 200px;
+                    color: white;
+                    font-size: 18px;
+                    padding-left: 20px;
+                    background: #FF8901 url('icon11.jpg') no-repeat 20px center;
+                }
+                p.notice{
+                    color: #999;
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+    div.part3{
+        margin-top: 20px;
+        display: flex;
+        aside{
+            flex: 1;
+            div.top{
+                border: 1px solid #ccc;
+                border-top: 2px solid #1F85D0;
+                margin-right: 20px;
+                background-color: white;
+                h4{
+                    line-height: 40px;
+                    text-align: center;
+                    background-color: #F3F3F3;
+                    border-bottom: 1px solid #ccc;
+                }
+                dl{
+                    margin: 15px 15px 30px 20px;
+                    a{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    dd{
+                        margin-top: 10px;
+                        h6{
+                            color: #555;
+                            text-align: justify;
+                        }
+                        p{
+                            color: red;
+                        }
+                    }
+                }
+                &.bottom{
+                    margin-top: 15px;
+                    h4{
+                        text-align: left;
+                        padding-left: 15px;
+                    }
+                }
+            }
+            
+        }
+        section{
+            flex: 4;
+            div.top{
+                border: 1px solid #ccc;
+                position: relative;
+                >input,>span{
+                    position: absolute;
+                    width: 33.3%;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    top: 0;
+                    left: 0;
+                    background-color: #EFEFEF;
+                    box-sizing: border-box;
+                }
+                >span{
+                    border-left: 1px solid #555;
+                    border-right: 1px solid #555;
+                }
+                >.common{
+                    left: 33.3%;                    
+                }
+                >.zx{
+                    left: 66.6%;                    
+                }
+                >input{
+                    z-index: 10;
+                    opacity: 0;
+                    &:checked+span {
+                        background-color: #0479C9;
+                        color: white;
+                    }
+                    &:checked.introduce ~ article.introduce_con{
+                        display: block;
+                    } 
+                    &:checked.common ~ article.common_con{
+                        display: block;
+                    } 
+                    &:checked.zx ~ article.zx_con{
+                        display: block;
+                    } 
+                }
+                article{
+                    display: none;
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    top: 40px;
+                    box-sizing: border-box;
+                    background-color: white;
+                    font-family: 'simsun';
+                    border: 1px solid #ccc;
+                    &.introduce_con{
+                        padding: 15px;
+                        div.img{
+                            margin: 25px 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        h4{
+                            padding-bottom: 6px;
+                            border-bottom: 2px solid #999;
+                            color: #225CB0;
+                            font-size: 18px;
+                            font-weight: normal;
+                            span{
+                                margin-left: 20px;
+                                color: #999;
+                                font-size: 13px;
+                            }
+                            &::before{
+                                position: absolute;
+                                content: '';
+                                width: 10%;
+                                height: 2px;
+                                background-color: #225CB0;
+                                margin-top: 30px;
+                            }                            
+                        }
+                        p{
+                            font-size: 15px;
+                            line-height: 1.7;
+                            color: #555;
+                            text-indent: 2em;
+                            text-align: justify;
+                            margin: 8px 0 30px;
+                        }
+                    }
+                    &.common_con{
+                        h4{
+                            margin: 15px 0 40px 20px;
+                            color: #676767;
+                        }
+                        div.up{
+                            display: flex;
+                            div.num{
+                                font-size: 40px;
+                                color: #FF8E02;
+                                font-weight: bold;
+                                margin-left: 20px;
+                                span{
+                                    font-size: 16px;
+                                    color: #999;
+                                }
+                                margin-right: 10px;
+                            }
+                            div.pj{
+                                margin-bottom: 50px;
+                                ul{
+                                    display: flex;
+                                    position: relative;
+                                    font-family: 'simsun';
+                                    li{
+                                        padding: 2px 30px;
+                                        font-size: 12px;
+                                        color: white;
+                                        background-color: #BDBDBD;
+                                    }
+                                    &::after{
+                                        position: absolute;
+                                        content: attr(data-num);
+                                        background-color: #7F7F7F;
+                                        padding: 2px 3px;
+                                        color: white;
+                                        top: -28px;
+                                        left: ~'calc(4.7 / 5 * 100%)';
+                                    }
+                                    &::before{
+                                        position: absolute;
+                                        content: '';
+                                        width: 0;
+                                        height: 0;
+                                        border: 5px solid transparent;
+                                        border-top-color:#7F7F7F;
+                                        top: -7px;
+                                        left: ~'calc(4.7 / 5 * 100% + 9px)';
+                                        z-index: 10;
+                                    }
+                                }
+                                p{
+                                    color: #66647C;
+                                    font-size: 12px;
+                                    margin-top: 6px;                                    
+                                }
+                            }
+                        }
+                        div.middle{
+                            background-color: white;
+                            ul{
+                                background-color: #F2F2F2;
+                                display: flex;
+                                justify-content: space-around;
+                                line-height: 36px;
+                                font-size: 13px;
+                                color: black;
+                                li.mr{
+                                    margin-right: 200px;
+                                }
+                                li.active{
+                                    font-weight: bold;
+                                    color: rgb(39, 39, 66);
+                                    border-bottom: 2px solid rgb(39, 39, 66);
+                                }
+                                li.border{
+                                    border: 1px solid #C9C9C9;
+                                    border-bottom: none;
+                                    height: 26px;
+                                    line-height: 26px;
+                                    margin-top: 5px;
+                                    padding: 0 20px 0 10px;
+                                    background: url('icon12.jpg') no-repeat 70px center;
+                                }
+                            }
+                        }
+                        div.down{
+                            dl{
+                                display: flex;
+                                margin: 15px 0 30px;
+                                line-height: 2;
+                                dt{
+                                    flex: 1;
+                                    text-align: center;
+                                    p{
+                                        font-size: 13px;
+                                        color: #999;
+                                    }
+                                }
+                                dd{
+                                    flex: 5;
+                                    p.one{
+                                        font-weight: bold;
+                                        color: black;
+                                        font-size: 13px;
+                                        img{
+                                            margin-right: 10px;
+                                        }
+                                        span{
+                                            margin-left: 400px;
+                                            color: #bbb;
+                                            font-size: 12px;
+                                        }
+                                    }
+                                    p.two{
+                                        color: #999;
+                                        font-size: 14px;
+                                    }
+                                    p.three a{
+                                        color: #0E5D96;
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+                        }
+                        div.page{
+                            display: flex;
+                            justify-content: flex-end;
+                            margin: 0 40px 40px 0;
+                            a{
+                                padding: 5px 10px;
+                                margin: 0 5px;
+                                border: 1px solid #ccc;
+                                color: #999;
+                                &.active{
+                                    background-color: #555;
+                                    color: red;
+                                }
+                            }
+                        }
+                    }
+                    &.zx_con{
+                        padding-top: 30px;
+                        div.one{
+                            display: flex;
+                            span{
+                                padding: 5px 10px;
+                                font-size: 14px;
+                                &:first-child{
+                                    flex: 1;
+                                    border-left: 1px solid rgb(24, 24, 70);
+                                    border-top: 1px solid rgb(24, 24, 70);
+                                }
+                                &:last-child{
+                                    flex: 6;
+                                    border-left: 1px solid rgb(24, 24, 70);
+                                    border-bottom: 1px solid rgb(24, 24, 70);
+                                    text-align: right;
+                                }
+                            }
+                        }
+                        div.two{
+                            margin: 10px 20px 30px 20px;
+                            background-color: #eee;
+                            padding: 10px;
+                            font-size: 13px ;
+                            line-height: 2;
+                            color: #666;
+                        }
+                        div.three{
+                            dl{
+                                display: flex;
+                                line-height: 2;
+                                margin-bottom: 30px;
+                                font-size: 13px;
+                                color: #797979;
+                                dt{
+                                    flex: 1;
+                                    text-align: center;
+                                    img{
+                                        width: 30%;
+                                    }
+                                }
+                                dd{
+                                    flex: 4;
+                                    p.one{
+                                        display: flex;
+                                        justify-content: space-between;
+                                        color: black;
+                                        font-weight: 600;
+                                        margin-right: 50px;
+                                        span{
+                                            color: #ccc;
+                                        }
+                                    }
+                                    p.three{
+                                        margin: 20px 50px 0 0;
+                                        padding: 20px;
+                                        background-color: #eee;
+                                    }
+                                }
+                            }
+                        }
+                        div.page{
+                            margin: 30px 50px 30px 200px;
+                            a{
+                                padding: 3px 10px;
+                                margin-right: 10px;
+                                border: 1px solid #ccc;
+                                font-size: 13px;
+                                text-decoration: none;
+                                &.active{
+                                    background-color: red;
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
