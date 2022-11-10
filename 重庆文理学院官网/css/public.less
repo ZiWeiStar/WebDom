@@ -1,0 +1,106 @@
+header{
+.st1{
+    background-color: #001644;
+    margin-bottom: 0px;
+    border: none;
+}
+.st2{
+    top: -20px;
+    height: 157px;
+    background: url('../images/img1.jpg') no-repeat center center;    
+    .st3{
+      height: 110px;
+      .st4{
+        line-height: 108px;
+        background: url('../images/img3.png') no-repeat right center;
+      }
+    }
+    .st5{
+      height: 47px;
+      background-color: rgba(3,43,131,.3)!important;
+      position: relative;
+      >div{
+        display: flex;
+        dl{
+          flex: 1;
+          &:hover dd{
+            display: block;
+          }
+          dt{
+            line-height: 47px;
+            font-size: 15px;
+            color: white;
+            text-align: center;
+            &:hover{
+              background-color: rgb(94, 144, 190);
+              cursor: pointer;
+            }
+          }
+          dd{
+            display: none;
+            position: absolute;
+            z-index: 100;
+            left: 0;
+            top: 47px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            a{
+              display: block;
+              line-height: 2.5;
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+footer{
+  background: url('../images/img2.jpg') no-repeat center center;
+  height: 240px;
+  box-sizing: border-box;
+  div.container{
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  .st5{
+    p:last-child{
+      margin-top: 20px;
+      a{
+        display: block;
+        color: white;
+        line-height: 1.8;
+        &:first-child{
+          background: url('../images/img5.png') no-repeat left center;
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+  .st6{
+    color: white;
+    line-height: 2.2;
+    p:first-child{
+      border-bottom: 1px solid white;
+      &::before{
+        content: '';
+        position: absolute;
+        width: 30%;
+        height: 1px;
+        background-color: white;
+        margin-top: 30px;
+      }
+    }
+    a{
+      display: block;
+      color: white;
+    }
+  }
+  >p{
+    text-align: center;
+    background-color: #041438;
+    line-height: 40px;
+    color: #999;
+  }
+}

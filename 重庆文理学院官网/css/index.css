@@ -1,0 +1,85 @@
+main .stm1 p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-align: justify;
+  margin: 10px 0 20px;
+  text-indent: 2em;
+}
+main .stm2 {
+  padding: 20px 10px;
+}
+main .stm2 a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 2.8;
+  font-size: 16px;
+}
+main .stm3 section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .stm3 section a {
+  line-height: 2.8;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+main .stm3 section span {
+  width: 100px;
+  text-align: right;
+}
+main .stm4 {
+  bottom: -45px;
+}
+main .stm4 li {
+  border-color: blue;
+}
+main .stm4 li.active {
+  background-color: #c8ff00;
+}
+main .stm5 {
+  border-bottom: 2px solid #999;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  position: relative;
+}
+main .stm5::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 20%;
+  background-color: #1f123d;
+  left: 0;
+  bottom: -2px;
+}
+main .stm5 small {
+  color: #002F94;
+  font-weight: bold;
+}
+main .stm6 {
+  margin-bottom: 30px;
+}
+main .stm6 a {
+  display: block;
+  height: 150px;
+  box-sizing: border-box;
+  color: #999;
+}
+main .stm6 a:hover {
+  border: 2px solid #9999;
+  background-color: #666;
+  color: white;
+}
+main .stm6 a img {
+  width: 100%;
+}
+main .stm6 a p {
+  text-align: center;
+  margin-top: 10px;
+}
