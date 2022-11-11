@@ -1,0 +1,202 @@
+@charset 'UTF-8';
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+a,
+a:visited {
+  text-decoration: none;
+  color: #46a3f0;
+}
+@font-face {
+  font-family: 'myfont';
+  src: url("../fonts/raphaelicons-webfont.eot") format('eot'), url("../fonts/raphaelicons-webfont.svg") format('svg'), url("../fonts/raphaelicons-webfont.ttf") format('ttf'), url("../fonts/raphaelicons-webfont.woff") format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+div.container {
+  height: calc(100% - 50px);
+  overflow: hidden;
+}
+div.container > input,
+div.container > span {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  width: 20%;
+}
+div.container > input {
+  z-index: 10;
+  opacity: 0;
+}
+div.container > .input1:checked ~ main .art1 h2 {
+  animation: down 2s linear;
+}
+div.container > .input2:checked ~ main .art2 h2 {
+  animation: down 2s linear;
+}
+div.container > .input3:checked ~ main .art3 h2 {
+  animation: down 2s linear;
+}
+div.container > .input4:checked ~ main .art4 h2 {
+  animation: down 2s linear;
+}
+div.container > .input5:checked ~ main .art5 h2 {
+  animation: down 2s linear;
+}
+div.container > .input1:checked ~ main .art1 section {
+  animation: up 2s linear;
+}
+div.container > .input2:checked ~ main .art2 section {
+  animation: up 2s linear;
+}
+div.container > .input3:checked ~ main .art3 section {
+  animation: up 2s linear;
+}
+div.container > .input4:checked ~ main .art4 section {
+  animation: up 2s linear;
+}
+div.container > .input4:checked ~ main .art4 section p {
+  font-family: 'myfont';
+  font-size: 70px;
+  letter-spacing: 10px;
+  text-indent: 0;
+  margin-left: 300px;
+}
+div.container > .input5:checked ~ main .art5 section {
+  animation: up 2s linear;
+}
+div.container > input:nth-child(4n-1) ~ main article:nth-child(2n) {
+  background-color: #333;
+  color: #eee;
+}
+div.container > input:hover + span {
+  background-color: #46a3f0;
+}
+div.container > input:checked + span {
+  background-color: #1C8990;
+}
+div.container > input:checked + span::after {
+  position: absolute;
+  content: '';
+  left: calc(50% - 10px);
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom-color: #1C8990;
+  top: -20px;
+}
+div.container > span {
+  text-align: center;
+  line-height: 50px;
+  font-size: 25px;
+  color: white;
+  background-color: #E23A6E;
+  z-index: 5;
+}
+div.container > input:nth-child(3),
+div.container > span:nth-child(4) {
+  left: 20%;
+}
+div.container > input:nth-child(5),
+div.container > span:nth-child(6) {
+  left: 40%;
+}
+div.container > input:nth-child(7),
+div.container > span:nth-child(8) {
+  left: 60%;
+}
+div.container > input:nth-child(9),
+div.container > span:nth-child(10) {
+  left: 80%;
+}
+div.container .input1:checked ~ main {
+  transform: translateY(0);
+}
+div.container .input2:checked ~ main {
+  transform: translateY(-100%);
+}
+div.container .input3:checked ~ main {
+  transform: translateY(-200%);
+}
+div.container .input4:checked ~ main {
+  transform: translateY(-300%);
+}
+div.container .input5:checked ~ main {
+  transform: translateY(-400%);
+}
+div.container main {
+  height: 100%;
+}
+div.container main article {
+  height: 100%;
+  overflow-y: auto;
+  line-height: 1.7;
+  font-size: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+div.container main article header {
+  width: 70px;
+  height: 70px;
+  background-color: red;
+  margin: -55px auto 0;
+  transform: rotate(45deg);
+  position: relative;
+}
+div.container main article header::after {
+  position: absolute;
+  content: attr(data-icon);
+  font-family: 'myfont';
+  font-size: 40px;
+  color: white;
+  left: 37px;
+  top: 20px;
+  animation: rotate 2s linear infinite;
+}
+div.container main article h2 {
+  font-size: 50px;
+  color: #FF6381;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  margin: 10px 0 15px;
+}
+div.container main article section p {
+  text-indent: 2em;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes down {
+  from {
+    transform: translateY(-130px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes up {
+  from {
+    transform: translateY(230px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,151 @@
+@charset 'UTF-8';
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+@font-face {
+  font-family: 'myfont';
+  src: url("../fonts/raphaelicons-webfont.eot") format('eot'), url("../fonts/raphaelicons-webfont.svg") format('svg'), url("../fonts/raphaelicons-webfont.ttf") format('ttf'), url("../fonts/raphaelicons-webfont.woff") format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+div.container {
+  height: 100%;
+  border: 3px solid #E23A6E;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+div.container nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  line-height: 40px;
+}
+div.container nav > a,
+div.container nav > a:visited {
+  background-color: #E23A6E;
+  color: white;
+  font-weight: 600;
+}
+div.container main {
+  height: calc(100% - 37px);
+  transition: transform 1s ease;
+}
+div.container main article {
+  height: 100%;
+  padding: 15px;
+  padding-bottom: 55px;
+  font-size: 20px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+div.container main article h2 {
+  text-align: center;
+  font-size: 50px;
+  color: #FF6381;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+}
+div.container main article section {
+  text-indent: 2em;
+  line-height: 2;
+  text-align: justify;
+}
+div.container main article:nth-child(2n) {
+  background-color: #EA81B1;
+  color: white;
+}
+div.container main article:nth-child(2n) h2 {
+  color: white;
+}
+div.container main article.art4 section p {
+  font-family: 'myfont';
+  font-size: 80px;
+  letter-spacing: 10px;
+  color: #252c6b;
+  padding: 50px;
+}
+div.container input:checked + span {
+  background-color: #1FB5EA;
+}
+@keyframes h2down {
+  from {
+    transform: translateY(-130px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes sectionup {
+  from {
+    transform: translateY(130px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+div.container .input1:checked ~ main .art1 h2 {
+  animation: h2down 2s ease 1s backwards;
+}
+div.container .input1:checked ~ main .art1 section {
+  animation: sectionup 2s ease 1s backwards;
+}
+div.container .input2:checked ~ main .art2 h2 {
+  animation: h2down 2s ease .5s backwards;
+}
+div.container .input2:checked ~ main .art2 section {
+  animation: sectionup 2s ease .5s backwards;
+}
+div.container .input3:checked ~ main .art3 h2 {
+  animation: h2down 2s ease .5s backwards;
+}
+div.container .input3:checked ~ main .art3 section {
+  animation: sectionup 2s ease .5s backwards;
+}
+div.container .input4:checked ~ main .art4 h2 {
+  animation: h2down 2s ease .5s backwards;
+}
+div.container .input4:checked ~ main .art4 section {
+  animation: sectionup 2s ease .5s backwards;
+}
+div.container .input5:checked ~ main .art5 h2 {
+  animation: h2down 2s ease .5s backwards;
+}
+div.container .input5:checked ~ main .art5 section {
+  animation: sectionup 2s ease .5s backwards;
+}
+div.container input:checked + span::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-bottom-color: #1FB5EA;
+  margin-top: -40px;
+  margin-left: 22px;
+}
+div.container .input1:checked ~ main {
+  transform: translateY(0);
+}
+div.container .input2:checked ~ main {
+  transform: translateY(-100%);
+}
+div.container .input3:checked ~ main {
+  transform: translateY(-200%);
+}
+div.container .input4:checked ~ main {
+  transform: translateY(-300%);
+}
+div.container .input5:checked ~ main {
+  transform: translateY(-400%);
+}

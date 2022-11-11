@@ -1,0 +1,65 @@
+@charset 'UTF-8';
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+a,
+a:visited {
+  text-decoration: none;
+  color: #46a3f0;
+}
+@font-face {
+  font-family: 'myfont';
+  src: url("../fonts/raphaelicons-webfont.eot") format('eot'), url("../fonts/raphaelicons-webfont.svg") format('svg'), url("../fonts/raphaelicons-webfont.ttf") format('ttf'), url("../fonts/raphaelicons-webfont.woff") format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+div.container {
+  border: 2px solid red;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+div.container nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #E23A6E;
+  display: flex;
+  justify-content: space-around;
+}
+div.container nav a,
+div.container nav a:visited {
+  line-height: 50px;
+  font-size: 25px;
+}
+div.container main {
+  height: calc(100% - 50px);
+}
+div.container main article {
+  height: 100%;
+  overflow: auto;
+}
+div.container main article h2 {
+  text-align: center;
+  margin: 25px 0;
+  font-size: 50px;
+}
+div.container main article section p {
+  text-indent: 2em;
+  line-height: 1.7;
+  padding: 0 15px;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+div.container main article.art4 p {
+  font-family: 'myfont';
+  font-size: 5em;
+  color: chocolate;
+}

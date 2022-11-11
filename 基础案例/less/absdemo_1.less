@@ -1,0 +1,242 @@
+//内容列表应用float法
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  //font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  font-family: 'microsoft yahei';
+  -webkit-user-select: none;
+  user-select: none;
+  -ms-touch-action: none;
+  font-size: 1.5vh;
+  overflow: scroll;//和下一句共同完成：移动平台局部区域的滚动弹性效果
+  -webkit-overflow-scrolling: touch;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  /*苹果手持设备的浏览器属性，意思是：点击它，它就会出现一个半透明的灰色背景。webkit是苹果浏览器引擎，tap点击，highlight背景高亮，color颜色，颜色用数值调节。*/
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+header, adv, main, footer {
+  position: absolute;
+  //下两行实现绝对定位的拉伸效果
+  left: 0;
+  right: 0;
+}
+
+header {
+  height: 48px;
+  padding: 0 5px;
+  background-color: #21292B;
+  color: #fff;
+  display: flex;
+  h1 {
+    line-height: 48px;
+    font-size: 2.2vh;
+    flex: 1;
+    text-align: center;
+  }
+  a {
+    width: 28px;
+    height: 28px;
+    padding: 10px;
+    background: url(../img/search-add1.png) no-repeat ;
+    background-clip: content-box;
+    background-size: 48px 144px;
+    text-indent: -99em;
+    overflow: hidden;
+  }
+
+  & > a {
+    background-position: left -98px;
+    flex: 1;
+  }
+  aside {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    a {
+      &:first-child {
+        background-position: center 0px;
+      }
+      &:last-child {
+        background-position: center -48px;
+      }
+    }
+  }
+}
+
+adv {
+  top: 49px;
+}
+
+main {
+  bottom: 42px;
+  overflow: auto;
+  padding: 10px;
+  line-height: 1.5;
+  font-size: 2vh;
+  span {
+    position: absolute;
+    margin: 8px 0 0 8px;
+    color: #3471ff;
+    border: 1px solid blue;
+    padding: 0 3px;
+  }
+  h3 {
+    font-weight: normal;
+    padding: 8px;
+    text-align: justify;
+    text-indent: 2.5em;
+    background-color: #ebebeb;
+  }
+  a {
+    display: block;
+    border-bottom: 1px solid #d7d7d7;
+    padding: 8px 0 8px 58px;
+    line-height: 24px;
+    &:last-child {
+      border: none;
+    }
+    img {
+      position: absolute;
+      margin-left: -58px;
+    }
+    h4 {
+      font-size: 1.7vh;
+      color: #333;
+    }
+    time {
+      float: right;
+      margin-top: -24px;
+      font-size: 1vh;
+      color: #b9b9b9;
+    }
+    p {
+      color: #a8a8a8;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+}
+
+footer {
+  bottom: 0;
+  height: 52px;
+  border-top: 1px solid #dfdfdf;
+  background-color: #fcfcfc;
+  display: flex;
+  justify-content: space-around;
+  a {
+    color: #999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    i {
+      height: 35px;
+      width: 35px;
+      margin-bottom: -3px;
+      background: url("../img/icons.png") no-repeat;
+    }
+
+    &:nth-child(1) i {
+      background-position: center 0;
+    }
+
+    &:nth-child(2) i {
+      background-position: center -70px;
+    }
+
+    &:nth-child(3) i {
+      background-position: center -140px;
+    }
+
+    &:nth-child(4) i {
+      background-position: center -210px;
+    }
+    &.active {
+      color: #45c018;
+    }
+
+    &.active i {
+      background-position: center -245px;
+    }
+  }
+}
+
+.mainTop(@advTop:129px) {
+  top: @advTop+48px;
+}
+
+@media (max-width: 414px) {
+  adv {
+    height: 129px;
+    background: #ddd url("../img/xjp414.jpg") no-repeat;
+  }
+
+  main {
+    .mainTop();
+  }
+}
+
+@media (min-width: 415px) {
+  adv {
+    height: 220px;
+    background: #ddd url("../img/xjp700.jpg") no-repeat;
+    background-size: cover;
+  }
+
+  main {
+    .mainTop(220px);
+  }
+}
+
+@media (min-width: 800px) {
+  adv {
+    height: 220px;
+    background: #ddd url("../img/xjp1024.jpg") no-repeat;
+    background-size: cover;
+  }
+
+  main {
+    .mainTop(220px);
+  }
+}
+
+@height: 300px;
+@media (min-width: 1025px) {
+  header, adv, main, footer {
+    left: ~'calc((100% - 1027px)/2)';
+    right: ~'calc((100% - 1027px)/2)';
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+  }
+
+  adv {
+    height: @height;
+    background: #ddd url("../img/xjp1025.jpg") no-repeat;
+  }
+
+  main {
+    .mainTop(@height);
+  }
+}
+
+
+

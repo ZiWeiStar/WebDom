@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" dd="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" dd="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        div {
+            width: 600px;
+            margin: 50px auto 0;
+            position: relative;
+        }
+        
+        div img {
+            width: 100%;
+            vertical-align: middle;
+        }
+        
+        div span {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            left: 0;
+        }
+        
+        div span.right {
+            left: 50%;
+        }
+        
+        div span:hover {
+            background-color: rgba(255, 255, 255, .5);
+        }
+        
+        div span.left:hover {
+            cursor: url('cur/Dgn1_Hnd.cur'), auto;
+        }
+        
+        div span.right:hover {
+            cursor: url('cur/Dgn2_Hnd.cur'), auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="left"></span>
+        <span class="right"></span>
+        <img src="../img/img_g1.jpg" alt="">
+    </div>
+</body>
+
+</html>

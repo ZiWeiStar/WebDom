@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #DBE5EA;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 80px;
+        }
+        
+        nav dl {
+            padding: 10px 20px;
+            font-size: 23px;
+            margin-right: 1px;
+            position: relative;
+            perspective: 300px;
+            /*透视效果,对下一元素起作用*/
+            cursor: default;
+        }
+        
+        nav dl:last-child {
+            margin-right: 0;
+        }
+        
+        nav dl dt {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            transform-style: preserve-3d;
+            /*子元素作3D变换*/
+            transform: translateZ(-25px);
+            transition: transform .5s ease-in-out;
+        }
+        
+        nav dl dt span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 10px 20px;
+            color: white;
+            background-color: #0A246A;
+        }
+        
+        nav dl dt span:first-child {
+            transform: translateZ(25px);
+        }
+        
+        nav dl dt span:last-child {
+            background-color: rgb(77, 161, 8);
+            transform: rotateX(-90deg) translateZ(25px);
+        }
+        
+        nav dl dt:hover {
+            transform: translateZ(-25px) rotateX(90deg);
+        }
+        
+        nav dl dd {
+            position: absolute;
+            left: 0;
+            top: 50px;
+            white-space: nowrap;
+        }
+        
+        nav dl dd {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 50px;
+            white-space: nowrap;
+        }
+        
+        nav dl dd dl {
+            margin-top: 1px;
+        }
+        
+        nav dl:hover dd {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <dl>Home
+            <dt>
+                <span class="front">Home</span>
+                <span class="bottom">Home</span>
+            </dt>
+        </dl>
+        <dl>Services
+            <dt>
+                <span class="front">Services</span>
+                <span class="bottom">Services</span>
+            </dt>
+            <dd>
+                <dl>机构设置
+                    <dt>
+                        <span class="front">机构设置</span>
+                        <span class="bottom">机构设置</span>
+                    </dt>
+                </dl>
+                <dl>教学工作
+                    <dt>
+                        <span class="front">教学工作</span>
+                        <span class="bottom">教学工作</span>
+                    </dt>
+                </dl>
+                <dl>后期保障
+                    <dt>
+                        <span class="front">后期保障</span>
+                        <span class="bottom">后期保障</span>
+                    </dt>
+                </dl>
+                <dl>学生工作
+                    <dt>
+                        <span class="front">学生工作</span>
+                        <span class="bottom">学生工作</span>
+                    </dt>
+                </dl>
+            </dd>
+        </dl>
+        <dl>Products
+            <dt>
+                <span class="front">Products</span>
+                <span class="bottom">Products</span>
+            </dt>
+        </dl>
+        <dl>About
+            <dt>
+                <span class="front">About</span>
+                <span class="bottom">About</span>
+            </dt>
+        </dl>
+        <dl>Contact
+            <dt>
+                <span class="front">Contact</span>
+                <span class="bottom">Contact</span>
+            </dt>
+            <dd>
+                <dl class="zzz">机械工业部
+                    <dt>
+                        <span class="front">机械工业部</span>
+                        <span class="bottom">机械工业部</span>
+                    </dt>
+                </dl>
+                <dl>教学工作
+                    <dt>
+                        <span class="front">教学工作</span>
+                        <span class="bottom">教学工作</span>
+                    </dt>
+                </dl>
+                <dl>后期保障
+                    <dt>
+                        <span class="front">后期保障</span>
+                        <span class="bottom">后期保障</span>
+                    </dt>
+                </dl>
+                <dl>学生工作
+                    <dt>
+                        <span class="front">学生工作</span>
+                        <span class="bottom">学生工作</span>
+                    </dt>
+                </dl>
+            </dd>
+        </dl>
+        <dl>Blog
+            <dt>
+                <span class="front">Blog</span>
+                <span class="bottom">Blog</span>
+            </dt>
+        </dl>
+        <dl>Shop On-dlne
+            <dt>
+                <span class="front">Shop On-dlne</span>
+                <span class="bottom">Shop On-dlne</span>
+            </dt>
+        </dl>
+    </nav>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        nav {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul {
+            display: none;
+        }
+        
+        nav a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 8px;
+            border: 1px solid black;
+            background-color: black;
+            white-space: nowrap;
+        }
+        
+        nav div>a {
+            padding: 8px 26px;
+        }
+        
+        nav div:first-child a {
+            border-radius: 5px 0 0 5px;
+        }
+        
+        nav>div:last-child>a {
+            border-radius: 0 5px 5px 0;
+        }
+        
+        nav a:hover {
+            color: black;
+            background-color: white;
+        }
+        
+        nav div:hover ul {
+            display: block;
+        }
+        
+        nav div ul li {
+            position: relative;
+        }
+        
+        nav div ul li div {
+            display: none;
+            position: absolute;
+            top: 0;
+            border: 1px solid black;
+            left: 100%;
+        }
+        
+        nav div ul li:hover div {
+            display: block;
+        }
+        
+        nav div ul a {
+            text-align: center;
+            border-bottom: 1px dashed #666;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div>
+            <a href="http://www.baidu.com">首页</a>
+        </div>
+        <div>
+            <a href="#">新闻中心</a>
+            <ul>
+                <li><a href="http://www.cqwu.edu.cn">重庆文理学院</a></li>
+                <li><a href="#">二级菜单条</a></li>
+                <li><a href="#">二级菜单条</a></li>
+                <li><a href="#">二级菜单条</a></li>
+            </ul>
+        </div>
+        <div>
+            <a href="#">活动报道</a>
+            <ul>
+                <li><a href="#">二级菜单条</a></li>
+                <li><a href="#">二级菜单更多</a>
+                    <div>
+                        <a href="http://www.cqwu.edu.cn">重庆文理学院</a>
+                        <a href="#">三级菜单条</a>
+                        <a href="#">三级菜单条</a>
+                        <a href="#">三级菜单条</a>
+                    </div>
+                </li>
+                <li><a href="#">二级菜单条</a></li>
+                <li><a href="#">二级菜单条</a></li>
+            </ul>
+        </div>
+        <div>
+            <a href="#">机构设置</a>
+            <ul>
+                <li><a href="http://www.qq.com">腾讯主页</a></li>
+                <li><a href="#">二级菜单条</a></li>
+                <li><a href="#">二级菜单条</a></li>
+                <li><a href="#">二级菜单条</a></li>
+            </ul>
+        </div>
+        <div>
+            <a href="#">党政工团群</a>
+            <ul>
+                <li><a href="http://www.qq.com">腾讯主页</a></li>
+                <li><a href="#">二级菜单条</a></li>
+                <li><a href="#">二级菜单条更多</a>
+                    <div>
+                        <a href="http://www.cqwu.edu.cn">重庆文理学院</a>
+                        <a href="#">三级菜单条</a>
+                        <a href="#">三级菜单条</a>
+                        <a href="#">三级菜单条</a>
+                    </div>
+                </li>
+                <li><a href="#">二级菜单条</a></li>
+            </ul>
+        </div>
+        <div>
+            <a href="#">行政事务</a>
+            <ul>
+                <li><a href="http://www.qq.com">腾讯主页</a></li>
+                <li><a href="#">二级菜单条</a></li>
+                <li><a href="#">二级菜单条</a></li>
+                <li><a href="#">二级菜单条</a></li>
+            </ul>
+        </div>
+    </nav>
+
+</body>
+
+</html>
